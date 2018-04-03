@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="房屋租赁管理系统平台">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../.././node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script> -->
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>房屋租赁管理系统平台</title>
+</head>
+<body>
+    <!--首页顶部-->
+    <div class="index_top">
+        <nav class="navbar top_nav">
+            <!-- 顶部导航栏左侧 -->
+            <div class="container-fluid">
+                <div class="navbar-header header">
+                    <h1>房屋租赁管理系统平台</h1>
+                </div>
+                <div class="navbar-collaps search_form">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </div>
+                        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+                    </form>
+                </div>
+                <!-- 顶部导航栏右侧 -->
+                <div class="navbar-right log_reg dropdown">
+                    <a class="btn btn-default" href="#" role="button" style="display:static;">注册/登录</a>
+                    <!-- 个人中心 -->
+                    <div class="btn-group user_center" style="display:none;">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-user" id="usericon" aria-hidden="true"></span>
+                            个人中心
+                        </button>
+                        <button type="button" class="btn btn-default dropdown-toggle" 
+                            data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">切换下拉菜单</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">功能</a></li>
+                            <li><a href="#">另一个功能</a></li>
+                            <li><a href="#">其他</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                        </ul>
+                    </div>
+                    <!-- <button type="button" class="btn btn-default dropdown-toggle user_center" style="display:static;">
+                        <span class="glyphicon glyphicon-user" id="usericon" aria-hidden="true"></span>
+                        个人中心
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </nav>
+        <!-- 介绍找房 -->
+        <div>
+            <!-- 大标题 -->
+            <div class="t-title">
+                银川置信三沙源
+                <div class="main_search">
+                    <form action="" class="bs-example bs-example-form" role="form">
+                        <div>
+                            <div class="row">
+                                <div class="input-group input-group-lg">
+                                    <input type="text" class="form-control" style="height: 60px;">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" style="height:60px;">
+                                            搜索
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- 分页标签 -->
+        <div class="pg">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">SVN</a></li>
+                <li><a href="#">iOS</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--首页主体-->
+    <div class="index_bd">
+
+    </div>
+
+    <!--主页底部-->
+    <div class="index_ft">
+
+    </div>
+</body>
+</html>
