@@ -90,3 +90,31 @@ nav{
 .pg>ul>li{
     height: 20px;
 }
+/* 注册登录面板 */
+.reg-login-panel{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+/* 遮罩层 */
+.reg-login-panel .cover{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* 注册登录框 */
+.popup{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 500px;
+    z-index: 1001;
+    text-align: center;
+    margin: -200px 0 0 -193px;
+    font-size: 15px;
+}
