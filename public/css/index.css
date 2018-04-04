@@ -118,3 +118,16 @@ nav{
     margin: -200px 0 0 -193px;
     font-size: 15px;
 }
+
+.reg-login-nav{
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.reg-login-form{
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
