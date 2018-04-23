@@ -10,9 +10,13 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
     
-    $post_array = $_POST['Array'];
+    var_dump($_POST);
+    $post_array = $_POST;
+    var_dump($post_array);
+    var_dump($_POST);
     // 解析json
-    $obj = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/','',$_POST),true);
+    $k = preg_replace('/\s+/','',$post_array);
+    $obj = json_decode($k);
     
     var_dump($obj);
 
