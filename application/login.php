@@ -9,8 +9,10 @@
         echo "error";
         die('Could not connect: ' . mysqli_connect_error());
       }
-        
-    $obj = json_decode($_POST,true);
+    
+    echo $_POST;
+    $obj = json_decode($_POST);
+    echo $_POST;
     $uname = $obj->{'user_name'};
     $uemail = $obj->{'user_email'};
     $uphone = $obj->{'user_phone'};
