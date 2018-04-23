@@ -12,8 +12,10 @@
     
     $post_array = $_POST['Array'];
     // 解析json
-    $obj = json_decode($post_array);
+    $obj = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/','',$_POST),true);
     
+    var_dump($obj);
+
     $uname = $obj['user_name'];
     $uemail = $obj['user_email'];
     $uphone = $obj['user_phone'];
