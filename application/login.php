@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
     $username = "ubuntu";
-    $password = "Aq3*l@7QFg";
+    $password = "kangxinyuan";
     $bdname = "graduation";
     $conn = mysqli_connect($servername, $username, $password, $bdname);
     if (!$conn)
