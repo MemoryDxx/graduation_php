@@ -10,9 +10,9 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
         
-    $sql="INSERT INTO user (uname, uemail, uphone, upwd)
+    $sql="INSERT INTO user (uname, uphone, uemail, upwd)
     VALUES
-    ('$_POST[user_name]','$_POST[user_email]','$_POST[user_phone]','$_POST[user_pwd]')";
+    ('$_POST[user_name]','$_POST[user_phone]','$_POST[user_email]','$_POST[user_pwd]')";
     
     if ($conn->query($sql) === TRUE){
       echo "success";
