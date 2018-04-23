@@ -11,15 +11,13 @@
       }
     
     $post_array = $_POST['user'];
-    var_dump($_POST["user_name"]);
+    // 解析json
     $obj = json_decode($post_array);
     
-    var_dump($obj['user_name']);
-
-    $uname = $obj->{'user_name'};
-    $uemail = $obj->{'user_email'};
-    $uphone = $obj->{'user_phone'};
-    $upwd = $obj->{'user_pwd'};
+    $uname = $obj['user_name'];
+    $uemail = $obj['user_email'];
+    $uphone = $obj['user_phone'];
+    $upwd = $obj['user_pwd'];
     $sql="INSERT INTO user (uemail, uname, uphone, upwd)
     VALUES
     ('$uname','$uphone','$uemail','$upwd')";
