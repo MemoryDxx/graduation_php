@@ -57,7 +57,7 @@ function login() {
     user.user_name = document.getElementById("inputUsername3").value;
     user.user_phone = document.getElementById("inputPhone3").value;
     user.user_email = document.getElementById("inputEmail3").value;
-    user.user_pwd = document.getElementById("inputPassword4").value;
+    user.user_pwd = document.getElementById("inputPassword3").value;
     // 序列化参数
     var data = JSON.stringify(user);
     datapost(data,"http://123.207.141.123/application/login.php");
@@ -66,8 +66,8 @@ function login() {
 // 登录
 function reg() {
     var user = new Object();
-    user.user_name = document.getElementById("inputUsername3").value;
-    user.user_pwd = document.getElementById("inputPassword3").value;
+    user.user_name = document.getElementById("inputUsername4").value;
+    user.user_pwd = document.getElementById("inputPassword4").value;
     // 序列化参数
     var data = JSON.stringify(user);
     datapost(data,"http://123.207.141.123/application/reg.php");
