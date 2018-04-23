@@ -10,7 +10,7 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
     
-    $post_array = $_POST['data'];
+    $post_array = $_POST['user'];
     // 解析json
     $obj = json_decode($post_array);
     

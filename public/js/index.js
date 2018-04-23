@@ -61,8 +61,9 @@ function login() {
     user.user_email = document.getElementById("inputEmail3").value;
     user.user_pwd = document.getElementById("inputPassword3").value;
     // 序列化参数
+    console.log(user);
     var data = JSON.stringify(user);
-    datapost(data,"http://123.207.141.123/application/login.php");
+    datapost(user,"http://123.207.141.123/application/login.php");
 }
 
 // 登录
