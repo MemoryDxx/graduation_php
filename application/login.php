@@ -10,9 +10,12 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
     
-    echo $_POST;
-    $obj = json_decode($_POST);
-    echo $_POST;
+    $post_array = $_POST['user'];
+    var_dump($_POST["user_name"]);
+    $obj = json_decode($post_array);
+    
+    var_dump($obj['user_name']);
+
     $uname = $obj->{'user_name'};
     $uemail = $obj->{'user_email'};
     $uphone = $obj->{'user_phone'};
