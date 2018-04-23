@@ -15,7 +15,7 @@
     $uemail = $obj->{'user_email'};
     $uphone = $obj->{'user_phone'};
     $upwd = $obj->{'user_pwd'};
-    $sql="INSERT INTO user (uname, uphone, uemail, upwd)
+    $sql="INSERT INTO user (uemail, uname, uphone, upwd)
     VALUES
     ('$uname','$uphone','$uemail','$upwd')";
     
