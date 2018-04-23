@@ -43,7 +43,7 @@ function datapost(data,url) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 //var data = JSON.parse(xhr.responseText);
-                console.log(data);
+                console.log(xhr.responseText);
             }
         }
     };
