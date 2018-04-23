@@ -20,7 +20,7 @@
     ('$uname','$uphone','$uemail','$upwd')";
     
     if ($conn->query($sql) === TRUE){
-      echo $obj;
+      echo $_POST;
     }else{
       echo "error: " . $sql . "<br>" . $conn->error;
     }
