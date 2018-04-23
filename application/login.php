@@ -20,7 +20,7 @@
     
     if ($conn->query($sql) === TRUE){
       echo "success";
-      echo $uname;
+      echo "$uname";
     }else{
       echo "error: " . $sql . "<br>" . $conn->error;
     }
