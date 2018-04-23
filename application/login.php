@@ -11,7 +11,7 @@
       }
     
     var_dump($_POST);
-    $post_array = $_POST;
+    $post_array = $_POST[array(1)];
     var_dump($post_array);
     var_dump($_POST);
     // 解析json
