@@ -10,16 +10,17 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
         
-    $uname = $_POST[user_name];
-    $uemail = $_POST[user_email];
-    $uphone = $_POST[user_phone];
-    $upwd = $_POST[user_pwd];
+    $obj = json_decode($_POST);
+    $uname = $obj->{'user_name'};
+    $uemail = $obj->{'user_email'};
+    $uphone = $obj->{'user_phone'};
+    $upwd = $obj->{'user_pwd'};
     $sql="INSERT INTO user (uname, uphone, uemail, upwd)
     VALUES
     ('$uname','$uphone','$uemail','$upwd')";
     
     if ($conn->query($sql) === TRUE){
-      echo $uname;
+      echo $obj;
     }else{
       echo "error: " . $sql . "<br>" . $conn->error;
     }
