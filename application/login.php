@@ -19,7 +19,7 @@
     ('$uname','$uphone','$uemail','$upwd')";
     
     if ($conn->query($sql) === TRUE){
-      echo "$uname";
+      echo $uname;
     }else{
       echo "error: " . $sql . "<br>" . $conn->error;
     }
