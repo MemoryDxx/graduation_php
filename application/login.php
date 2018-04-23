@@ -10,7 +10,7 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
         
-    $sql="INSERT INTO user (user_name, user_email, user_phone, user_pwd)
+    $sql="INSERT INTO user (uname, uemail, uphone, upwd)
     VALUES
     ('$_POST[user_name]','$_POST[user_email]','$_POST[user_phone]','$_POST[user_pwd]')";
     
