@@ -10,7 +10,7 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
     
-    var_dump($_POST['']);
+    var_dump($_POST['data']);
     var_dump($_POST['array(1)']);
     $post_array = $_POST[''];
     var_dump($post_array);
