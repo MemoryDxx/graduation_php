@@ -10,12 +10,17 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
         
+    $uname = $_POST[user_name];
+    $uemail = $_POST[user_email];
+    $uphone = $_POST[user_phone];
+    $upwd = $_POST[user_pwd];
     $sql="INSERT INTO user (uname, uphone, uemail, upwd)
     VALUES
-    ('$_POST[user_name]','$_POST[user_phone]','$_POST[user_email]','$_POST[user_pwd]')";
+    ('$uname','$uphone','$uemail','$upwd')";
     
     if ($conn->query($sql) === TRUE){
       echo "success";
+      echo $uname,$uemail,$uphone,$upwd;
     }else{
       echo "error: " . $sql . "<br>" . $conn->error;
     }
