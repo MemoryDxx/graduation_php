@@ -1,8 +1,9 @@
 <?php
-    $con = mysql_connect("localhost","root","Wx*mysql.com");
+    $con = mysql_connect("localhost","ubuntu","");
     if (!$con)
       {
-      die('Could not connect: ' . mysql_error());
+        echo "error";
+        die('Could not connect: ' . mysql_error());
       }
     
     mysql_select_db("graduation", $con);
