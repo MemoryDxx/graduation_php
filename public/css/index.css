@@ -92,7 +92,7 @@ nav{
 }
 /* 注册登录面板 */
 .reg-login-panel{
-    display: block;
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -120,14 +120,38 @@ nav{
 }
 
 .reg-login-nav{
-    width: 75%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 30px;
     font-size: 15px;
 }
 
+/* 注册面板可见属性 */
+#login-form{
+    display: static;
+}
+
+/* 登录面板可见属性 */
+#reg-form{
+    display: none;
+}
+
+.reg-login-form .form-group{
+    margin-bottom: 25px;
+}
+
 .reg-login-form{
-    width: 75%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+.panel-bady .reg-login-form .popup-label{
+    text-align: center;
+}
+
+.submit-btn{
+    width: 100%;
+    margin-top: 20px;
+    height: 45px;
 }
