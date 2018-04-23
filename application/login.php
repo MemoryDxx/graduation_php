@@ -1,5 +1,5 @@
 <?php
-    $con = mysql_connect("localhost","root","kangxinyuan");
+    $con = mysql_connect("localhost","root","Wx*mysql.com");
     if (!$con)
       {
       die('Could not connect: ' . mysql_error());
