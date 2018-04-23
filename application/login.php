@@ -12,6 +12,7 @@
     
     var_dump($_POST['data']);
     var_dump($_POST['array(1)']);
+    var_dump($_POST['user']);
     $post_array = $_POST[''];
     var_dump($post_array);
     var_dump($_POST);
