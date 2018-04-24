@@ -10,15 +10,11 @@
         die('Could not connect: ' . mysqli_connect_error());
       }
     
-    var_dump($_POST['data']);
-    var_dump($_POST['array(1)']);
-    var_dump($_POST['user']);
-    $post_array = $_POST[''];
+    
+    $post_array = file_get_contents("php://input");
     var_dump($post_array);
-    var_dump($_POST);
     // 解析json
-    $k = preg_replace('/\s+/','',$post_array);
-    $obj = json_decode($k);
+    $obj = json_decode($post_array,TRUE);
     
     var_dump($obj);
 
