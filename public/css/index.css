@@ -158,6 +158,38 @@ nav{
     text-align: center;
 }
 
+#wrong-msg1{
+    color: red;
+    display: none;
+    position: absolute;
+    top: 130px;
+    left: 130px;
+}
+
+#wrong-msg2{
+    color: red;
+    display: none;
+    position: absolute;
+    top: 190px;
+    left: 130px;
+}
+
+#wrong-msg3{
+    color: red;
+    display: none;
+    position: absolute;
+    top: 250px;
+    left: 130px;
+}
+
+#wrong-msg4{
+    color: red;
+    display: none;
+    position: absolute;
+    top: 370px;
+    left: 130px;
+}
+
 .submit-btn{
     width: 100%;
     margin-top: 20px;

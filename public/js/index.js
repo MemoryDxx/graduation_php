@@ -87,10 +87,15 @@ function datapost(data,url) {
 // 注册
 function login() {
     // flag判断输入是否合法
-    var phoneflag = false;
-    var emailflag = false;
-    var unameflag = false;
-    var upwdflag = false;
+    // var phoneflag = false;
+    // var emailflag = false;
+    // var unameflag = false;
+    // var upwdflag = false;
+    var flag = new Object();
+    flag.phoneflag = false;
+    flag.emailflag = false;
+    flag.unameflag = false;
+    flag.upwdflag = false;
 
     // 控制注册登录按钮改变为个人中心
     var navright = document.getElementById("lrbtn");
@@ -104,15 +109,15 @@ function login() {
     user.user_pwd = document.getElementById("inputPassword3").value;
 
     // 验证用户输入
-    phoneflag = phoneCheck(document.getElementById("inputPhone3").value);
-    emailflag = emailCheck(document.getElementById("inputEmail3").value);
-    unameflag = unameCheck(document.getElementById("inputUsername3").value);
+    flag.phoneflag = phoneCheck(document.getElementById("inputPhone3").value);
+    flag.emailflag = emailCheck(document.getElementById("inputEmail3").value);
+    flag.unameflag = unameCheck(document.getElementById("inputUsername3").value);
     if (document.getElementById("inputPassword3").value == document.getElementById("inputPassword2").value) {
-        upwdflag = true;
+        flag.upwdflag = true;
     }
     
     // flag皆为真
-    if (phoneflag && emailflag && unameflag && upwdflag) {
+    if (flag.phoneflag && flag.emailflag && flag.unameflag && flag.upwdflag) {
         // 序列化参数
         var data = JSON.stringify(user);
         console.log(data);
@@ -126,6 +131,8 @@ function login() {
         document.getElementById("inputPassword2").value = "";
         // 切换至登录面板
         swreg();
+    }else if(flag.unameflag == false){
+        document.getElementById("wrongmsg1").style.display = "static";
     }
 }
 
