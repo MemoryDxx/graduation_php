@@ -62,6 +62,8 @@ function login() {
     user.user_pwd = document.getElementById("inputPassword3").value;
     // 序列化参数
     var data = JSON.stringify(user);
+    console.log(data);
+    console.log(user);
     datapost("user=" + data,"http://123.207.141.123/application/login.php");
 }
 

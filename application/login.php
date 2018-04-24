@@ -20,9 +20,9 @@
 
     $uname = $obj->user_name;
     var_dump($uname);
-    $uemail = $obj['user_email'];
-    $uphone = $obj['user_phone'];
-    $upwd = $obj['user_pwd'];
+    $uemail = $obj->user_email;
+    $uphone = $obj->user_phone;
+    $upwd = $obj->user_pwd;
     $sql="INSERT INTO user (uemail, uname, uphone, upwd)
     VALUES
     ('$uname','$uphone','$uemail','$upwd')";
