@@ -25,7 +25,7 @@
     $upwd = $obj->user_pwd;
     $sql="INSERT INTO user (uemail, uname, uphone, upwd)
     VALUES
-    ('$uname','$uphone','$uemail','$upwd')";
+    ('$uemail','$uname','$uphone','$upwd')";
     
     if ($conn->query($sql) === TRUE){
       echo $_POST;
