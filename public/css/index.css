@@ -53,6 +53,14 @@ nav{
     margin-right: 30px;
 }
 
+#lrbtn{
+    display: static;
+}
+
+#pcenter{
+    display: none;
+}
+
 #usericon{
     font-size: 14px;
 }

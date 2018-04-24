@@ -45,6 +45,7 @@ function datapost(data,url) {
                 //var data = JSON.parse(xhr.responseText);
                 console.log(data);
                 console.log(xhr.responseText);
+                alert(xhr.responseText);
             }
         }
     };
@@ -55,6 +56,8 @@ function datapost(data,url) {
 
 // 注册
 function login() {
+    var navright = document.getElementById("lrbtn");
+    var navright1 = document.getElementById("pcenter");
     var user = new Object();
     user.user_name = document.getElementById("inputUsername3").value;
     user.user_phone = document.getElementById("inputPhone3").value;
@@ -65,6 +68,12 @@ function login() {
     console.log(data);
     console.log(user);
     datapost("user=" + data,"http://123.207.141.123/application/login.php");
+    document.getElementById("inputUsername3").value = "";
+    document.getElementById("inputPhone3").value = "";
+    document.getElementById("inputEmail3").value = "";
+    document.getElementById("inputPassword3").value = "";
+    document.getElementById("inputPassword2").value = "";
+    swreg();
 }
 
 // 登录
