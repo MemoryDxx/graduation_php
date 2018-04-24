@@ -1,3 +1,33 @@
+// 手机号检测
+function phoneCheck(params) {
+    var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+    if (!myreg.test(params)) {
+        return false;
+    }else{
+        return true;
+    }
+}
+
+// 邮箱号验证
+function emailCheck(params) {
+    var myreg = /^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/;
+    if (!myreg.test(params)) {
+        return false;
+    }else{
+        return true;
+    }
+}
+
+// 用户名验证
+function unameCheck(params) {
+    var myreg = /^[a-z0-9_-]{2,12}$/;
+    if (!myreg.test(params)) {
+        return false;
+    }else{
+        return true;
+    }
+}
+
 // 点击注册登录
 function lrbtn() {
     var logwindow = document.getElementsByClassName("reg-login-panel");
@@ -56,24 +86,47 @@ function datapost(data,url) {
 
 // 注册
 function login() {
+    // flag判断输入是否合法
+    var phoneflag = false;
+    var emailflag = false;
+    var unameflag = false;
+    var upwdflag = false;
+
+    // 控制注册登录按钮改变为个人中心
     var navright = document.getElementById("lrbtn");
     var navright1 = document.getElementById("pcenter");
+
+    // 获取表单数据
     var user = new Object();
     user.user_name = document.getElementById("inputUsername3").value;
     user.user_phone = document.getElementById("inputPhone3").value;
     user.user_email = document.getElementById("inputEmail3").value;
     user.user_pwd = document.getElementById("inputPassword3").value;
-    // 序列化参数
-    var data = JSON.stringify(user);
-    console.log(data);
-    console.log(user);
-    datapost("user=" + data,"http://123.207.141.123/application/login.php");
-    document.getElementById("inputUsername3").value = "";
-    document.getElementById("inputPhone3").value = "";
-    document.getElementById("inputEmail3").value = "";
-    document.getElementById("inputPassword3").value = "";
-    document.getElementById("inputPassword2").value = "";
-    swreg();
+
+    // 验证用户输入
+    phoneflag = phoneCheck(document.getElementById("inputPhone3").value);
+    emailflag = emailCheck(document.getElementById("inputEmail3").value);
+    unameflag = unameCheck(document.getElementById("inputUsername3").value);
+    if (document.getElementById("inputPassword3").value == document.getElementById("inputPassword2").value) {
+        upwdflag = true;
+    }
+    
+    // flag皆为真
+    if (phoneflag && emailflag && unameflag && upwdflag) {
+        // 序列化参数
+        var data = JSON.stringify(user);
+        console.log(data);
+        console.log(user);
+        datapost("user=" + data,"http://123.207.141.123/application/login.php");
+        // 输入框置空
+        document.getElementById("inputUsername3").value = "";
+        document.getElementById("inputPhone3").value = "";
+        document.getElementById("inputEmail3").value = "";
+        document.getElementById("inputPassword3").value = "";
+        document.getElementById("inputPassword2").value = "";
+        // 切换至登录面板
+        swreg();
+    }
 }
 
 // 登录
