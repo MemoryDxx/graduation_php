@@ -132,13 +132,13 @@ function login() {
         // 切换至登录面板
         swreg();
     }else if(flag.unameflag == false){
-        document.getElementById("wrongmsg1").style.display = "static";
+        document.getElementById("wrong-msg1").style.display = "static";
     }else if(flag.phoneflag == false){
-        document.getElementById("wrongmsg2").style.display = "static";
+        document.getElementById("wrong-msg2").style.display = "static";
     }else if(flag.emailflag == false){
-        document.getElementById("wrongmsg3").style.display = "static";
+        document.getElementById("wrong-msg3").style.display = "static";
     }else if(flag.upwdflag == false){
-        document.getElementById("wrongmsg4").style.display = "static";
+        document.getElementById("wrong-msg4").style.display = "static";
     }
 }
 
