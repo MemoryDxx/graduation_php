@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="房屋租赁管理系统平台">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script> -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>房屋租赁管理系统平台</title>
+</head>
+<body>
+    <!--首页顶部-->
+    <div class="house_top">
+        <nav class="navbar top_nav">
+            <!-- 顶部导航栏左侧 -->
+            <div class="container-fluid">
+                <div class="navbar-header header">
+                    <h1>房屋租赁管理系统平台</h1>
+                </div>
+                <div class="navbar-collaps search_form">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" placeholder="Search">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> -->
+                        </div>
+                        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+                    </form>
+                </div>
+                <!-- 顶部导航栏右侧 -->
+                <div class="navbar-right log_reg dropdown">
+                    <!-- 注册登录按钮 -->
+                    <a id="lrbtn" class="btn btn-default" href="#" role="button" onclick="lrbtn();">注册/登录</a>
+                    <!-- 个人中心 -->
+                    <div id="pcenter" class="btn-group user_center">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-user" id="usericon" aria-hidden="true"></span>
+                            个人中心
+                        </button>
+                        <button type="button" class="btn btn-default dropdown-toggle" 
+                            data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">切换下拉菜单</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">功能</a></li>
+                            <li><a href="#">另一个功能</a></li>
+                            <li><a href="#">其他</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!--首页主体-->
+    <div class="house_bd">
+        <div class="panel panel-default">
+            <!-- 房屋详情标题 -->
+            <div class="panel-heading house_ttl">
+                <span>标题</span> 
+            </div>
+            <!-- 房屋详情内容 -->
+            <div class="panel-body">
+                <div class="panel-lf">
+                    <img src="" alt="">
+                </div>
+                <div class="panel-rt">
+                    <div class="house-pri">
+                        <span class="total">价格</span>
+                        元/月
+                    </div>
+                    <div class="house-zf">
+                        <p class="zf-lf">面积&#58;</p>
+                        <p class="zf-lf">户型&#58;</p>
+                        <p class="zf-lf">朝向&#58;</p>
+                        <p class="zf-lf">楼层&#58;</p>
+                        <p>小区&#58;</p>
+                        <p>位置&#58;</p>
+                    </div>
+                    <div class="brokerinfo">
+                        <img class="brokerimg img-circle" src="" alt="">
+                        <div class="brokertext">
+                            <h3>发布者姓名</h3>
+                            <span>发布者电话</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-bt">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--主页底部-->
+    <div class="index_ft">
+        <footer class="footer">
+            <div class="foot-cont">
+            </div>
+        </footer>
+    </div>
+
+    <script src="./public/js/index.js"></script>
+</body>
+</html>
