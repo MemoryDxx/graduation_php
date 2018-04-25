@@ -106,7 +106,7 @@ function login() {
     user.user_name = document.getElementById("inputUsername3").value;
     user.user_phone = document.getElementById("inputPhone3").value;
     user.user_email = document.getElementById("inputEmail3").value;
-    user.user_pwd = document.getElementById("inputPassword3").value;
+    user.user_pwd = document.getElementById("inputPassword2").value;
 
     // 验证用户输入
     flag.phoneflag = phoneCheck(document.getElementById("inputPhone3").value);
@@ -133,6 +133,12 @@ function login() {
         swreg();
     }else if(flag.unameflag == false){
         document.getElementById("wrongmsg1").style.display = "static";
+    }else if(flag.phoneflag == false){
+        document.getElementById("wrongmsg2").style.display = "static";
+    }else if(flag.emailflag == false){
+        document.getElementById("wrongmsg3").style.display = "static";
+    }else if(flag.upwdflag == false){
+        document.getElementById("wrongmsg4").style.display = "static";
     }
 }
 
