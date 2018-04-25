@@ -2,7 +2,10 @@
 function phoneCheck(params) {
     var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
     if (!myreg.test(params)) {
-        return false;
+        var wrong = document.getElementById("wrong-msg2");
+        wrong.style.display = "block";
+        document.getElementById("inputPhone3").value = "";
+        return false;  
     }else{
         return true;
     }
@@ -12,6 +15,9 @@ function phoneCheck(params) {
 function emailCheck(params) {
     var myreg = /^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/;
     if (!myreg.test(params)) {
+        var wrong = document.getElementById("wrong-msg3");
+        wrong.style.display = "block";
+        document.getElementById("inputEmail3").value = "";
         return false;
     }else{
         return true;
@@ -22,6 +28,9 @@ function emailCheck(params) {
 function unameCheck(params) {
     var myreg = /^[a-z0-9_-]{2,12}$/;
     if (!myreg.test(params)) {
+        var wrong = document.getElementById("wrong-msg1");
+        wrong.style.display = "block";
+        document.getElementById("inputUsername3").value = "";
         return false;
     }else{
         return true;
@@ -109,13 +118,21 @@ function login() {
     user.user_pwd = document.getElementById("inputPassword2").value;
 
     // 验证用户输入
-    flag.phoneflag = phoneCheck(document.getElementById("inputPhone3").value);
-    flag.emailflag = emailCheck(document.getElementById("inputEmail3").value);
-    flag.unameflag = unameCheck(document.getElementById("inputUsername3").value);
-    if (document.getElementById("inputPassword3").value == document.getElementById("inputPassword2").value) {
+    flag.phoneflag = phoneCheck(user.user_phone);
+    flag.emailflag = emailCheck(user.user_email);
+    flag.unameflag = unameCheck(user.user_name);
+    if (user.user_pwd == document.getElementById("inputPassword3").value) {
         flag.upwdflag = true;
+    }else{
+        
     }
+    console.log(flag);
     
+    var wrong1 = document.getElementById("wrong-msg1");
+    var wrong2 = document.getElementById("wrong-msg2");
+    var wrong3 = document.getElementById("wrong-msg3");
+    var wrong4 = document.getElementById("wrong-msg4");
+
     // flag皆为真
     if (flag.phoneflag && flag.emailflag && flag.unameflag && flag.upwdflag) {
         // 序列化参数
@@ -131,14 +148,6 @@ function login() {
         document.getElementById("inputPassword2").value = "";
         // 切换至登录面板
         swreg();
-    }else if(flag.unameflag == false){
-        document.getElementById("wrong-msg1").style.display = "static";
-    }else if(flag.phoneflag == false){
-        document.getElementById("wrong-msg2").style.display = "static";
-    }else if(flag.emailflag == false){
-        document.getElementById("wrong-msg3").style.display = "static";
-    }else if(flag.upwdflag == false){
-        document.getElementById("wrong-msg4").style.display = "static";
     }
 }
 
