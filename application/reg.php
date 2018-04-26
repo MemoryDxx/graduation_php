@@ -17,7 +17,7 @@
     $sql = "SELECT upwd FROM user WHERE uname='$uname'";
 
     $res = $conn->query($sql);
-    if(! $retval ){
+    if(!$res){
         die('无法读取数据: ' . mysqli_error($conn));
     }
     var_dump($res);
