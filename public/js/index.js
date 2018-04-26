@@ -143,9 +143,9 @@ function login() {
                     // 解析请求返回的JSON数据
                     //var data = JSON.parse(xhr.responseText);
                     console.log(typeof(xhr.responseText));
-                    if (ex === "exist") {
+                    if (xhr.responseText === "exist") {
                         alert("用户已存在");
-                    }else if(su === "success"){
+                    }else if(xhr.responseText === "success"){
                         alert("注册成功");
                         // 切换至登录面板
                         swreg();
