@@ -244,14 +244,14 @@ function reg() {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 console.log(xhr.responseText);
-                var xhrres = JSON.parse(xhr.responseText);
+                // var xhrres = JSON.parse(xhr.responseText);
                 
-                if (xhrres.msg === "regsc") {
-                    pc.style.display = "block";
-                    bt.style.display = "none";
-                    closepop();
-                    CookieUtil.set("name",xhrres.name);
-                }
+                // if (xhrres.msg === "regsc") {
+                //     pc.style.display = "block";
+                //     bt.style.display = "none";
+                //     closepop();
+                //     CookieUtil.set("name",xhrres.name);
+                // }
             }
         }
     };
