@@ -32,13 +32,11 @@
                 </div>
                 <!-- 顶部导航栏右侧 -->
                 <div class="navbar-right log_reg dropdown">
-                    <!-- 注册登录按钮 -->
-                    <a id="lrbtn" class="btn btn-default" href="#" role="button" onclick="lrbtn();">注册/登录</a>
                     <!-- 个人中心 -->
                     <div id="pcenter" class="btn-group user_center">
                         <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-user" id="usericon" aria-hidden="true"></span>
-                            个人中心
+                            <p id="centername" style="display: inline;">个人中心</p>
                         </button>
                         <button type="button" class="btn btn-default dropdown-toggle" 
                             data-toggle="dropdown">
@@ -46,11 +44,7 @@
                             <span class="sr-only">切换下拉菜单</span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">功能</a></li>
-                            <li><a href="#">另一个功能</a></li>
-                            <li><a href="#">其他</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">分离的链接</a></li>
+                            <li><a href="#">注销</a></li>
                         </ul>
                     </div>
                 </div>
@@ -60,7 +54,60 @@
 
     <!--首页主体-->
     <div class="release_bd">
-        
+        <div class="release_panel">
+            <form id="release-form" class="form-horizontal reg-login-form">
+                <!-- 输入小区名 -->
+                <div class="form-group">
+                    <label for="inputUsername" class="col-sm-3 control-label popup-label">小区名</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="relname" placeholder="小区名">
+                    </div>
+                </div>
+                <!-- 输入户型 -->
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label popup-label">户型</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="reltype" placeholder="户型">
+                    </div>
+                </div>
+                <!-- 输入面积 -->
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label popup-label">面积</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="relarea" placeholder="面积">
+                    </div>
+                </div>
+                <!-- 输入楼层 -->
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label popup-label">楼层</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="relfloor" placeholder="楼层">
+                    </div>
+                </div>
+                <!-- 输入朝向 -->
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label popup-label">朝向</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="relori" placeholder="朝向">
+                    </div>
+                </div>
+                <!-- 输入位置 -->
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label popup-label">位置</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="relloc" placeholder="位置">
+                    </div>
+                </div>
+                <!-- 输入价格 -->
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label popup-label">价格</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="relpri" placeholder="价格">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default text-center submit-btn" onclick="rel();">发布</button>
+            </form>
+        </div>
     </div>
 
     <!--主页底部-->

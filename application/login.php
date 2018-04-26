@@ -23,15 +23,21 @@
     $uemail = $obj->user_email;
     $uphone = $obj->user_phone;
     $upwd = $obj->user_pwd;
-    $sql="INSERT INTO user (uemail, uname, uphone, upwd)
+    $sql = "INSERT INTO user (uemail, uname, uphone, upwd)
     VALUES
     ('$uemail','$uname','$uphone','$upwd')";
     
-    if ($conn->query($sql) === TRUE){
-      echo $_POST;
+    $sqlsel = "SELECT $uphone FROM user";
+
+    if ($conn->query($sqlsel) === TRUE) {
+      # code...
+      echo "exist";
+    }else if($conn->query($sql) === TRUE){
+      # code...
+      echo "success";
     }else{
       echo "error: " . $sql . "<br>" . $conn->error;
     }
-    
+
     $conn->close();
 ?>

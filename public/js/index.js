@@ -82,9 +82,7 @@ function datapost(data,url) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 //var data = JSON.parse(xhr.responseText);
-                console.log(data);
                 console.log(xhr.responseText);
-                alert(xhr.responseText);
             }
         }
     };
@@ -96,10 +94,6 @@ function datapost(data,url) {
 // 注册
 function login() {
     // flag判断输入是否合法
-    // var phoneflag = false;
-    // var emailflag = false;
-    // var unameflag = false;
-    // var upwdflag = false;
     var flag = new Object();
     flag.phoneflag = false;
     flag.emailflag = false;
@@ -123,8 +117,6 @@ function login() {
     flag.unameflag = unameCheck(user.user_name);
     if (user.user_pwd == document.getElementById("inputPassword3").value) {
         flag.upwdflag = true;
-    }else{
-        
     }
     console.log(flag);
     
@@ -148,6 +140,24 @@ function login() {
         document.getElementById("inputPassword2").value = "";
         // 切换至登录面板
         swreg();
+    }else{
+        if (flag.unameflag == false) {
+            wrong1.style.display = "block";
+            document.getElementById("inputUsername3").value = "";
+        }
+        if (flag.phoneflag == false) {
+            wrong2.style.display = "block";
+            document.getElementById("inputPhone3").value = "";
+        }
+        if (flag.emailflag == false) {
+            wrong3.style.display = "block";
+            document.getElementById("inputEmail3").value = "";
+        }
+        if (flag.upwdflag == false) {
+            wrong4.style.display = "block";
+            document.getElementById("inputPassword3").value = "";
+            document.getElementById("inputPassword2").value = "";
+        }
     }
 }
 
