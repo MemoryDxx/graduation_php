@@ -145,6 +145,10 @@ function login() {
                     console.log(typeof(xhr.responseText));
                     if (ex === "exist") {
                         alert("用户已存在");
+                    }else if(su === "success"){
+                        alert("注册成功");
+                        // 切换至登录面板
+                        swreg();
                     }
                 }
             }
@@ -159,8 +163,7 @@ function login() {
         document.getElementById("inputEmail3").value = "";
         document.getElementById("inputPassword3").value = "";
         document.getElementById("inputPassword2").value = "";
-        // 切换至登录面板
-        swreg();
+        
     }else{
         if (flag.unameflag == false) {
             wrong1.style.display = "block";
