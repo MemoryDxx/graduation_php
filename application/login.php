@@ -27,7 +27,8 @@
     VALUES
     ('$uemail','$uname','$uphone','$upwd')";
     
-    $sqlsel = "SELECT $uphone FROM user";
+    $sqlsel = "SELECT * FROM user
+    WHERE uphone = $uphone";
 
     if ($conn->query($sqlsel) === TRUE) {
       # code...
