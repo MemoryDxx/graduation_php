@@ -29,7 +29,7 @@
         $j = new jmsg();
         $j->msg = "regsc";
         $j->name = $uname;
-        echo json_encode($j);
+        echo $j;
     }
 
 ?>
