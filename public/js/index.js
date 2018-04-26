@@ -133,6 +133,7 @@ function login() {
         console.log(data);
         console.log(user);
         var result = datapost("user=" + data,"http://123.207.141.123/application/login.php");
+        console.log(result);
 
         if (result == "exist") {
             alert("用户已存在");
