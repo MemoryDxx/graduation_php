@@ -32,8 +32,9 @@
     WHERE uphone = $uphone";
 
     $result = $conn->query($sqlsel);
+    echo $result;
 
-    if ($result['uphone'] == $uphone) {
+    if ($result['uphone'] === $uphone) {
       # code...
       echo $result;
       echo "exist";
