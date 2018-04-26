@@ -29,12 +29,12 @@
     ('$uemail','$uname','$uphone','$upwd')";
     
     $sqlsel = "SELECT * FROM user
-    WHERE uphone = $uphone";
+    WHERE uphone = '$uphone'";
 
     $result = $conn->query($sqlsel);
     echo $result;
 
-    if ($result['uphone'] === $uphone) {
+    if ($result) {
       # code...
       echo $result;
       echo "exist";
