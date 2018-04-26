@@ -31,7 +31,7 @@
     $sqlsel = "SELECT * FROM user
     WHERE uphone = '$uphone'";
 
-    if ($conn->query($conn,"SELECT * FROM user
+    if ($conn->query("SELECT * FROM user
     WHERE uphone = '$uphone'")) {
       # code...
       echo "exist";
