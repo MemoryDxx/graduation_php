@@ -83,7 +83,6 @@ function datapost(data,url) {
                 // 解析请求返回的JSON数据
                 //var data = JSON.parse(xhr.responseText);
                 console.log(xhr.responseText);
-                return xhr.responseText;
             }
         }
     };
@@ -132,12 +131,26 @@ function login() {
         var data = JSON.stringify(user);
         console.log(data);
         console.log(user);
-        var result = datapost("user=" + data,"http://123.207.141.123/application/login.php");
-        console.log(result);
 
-        if (result == "exist") {
-            alert("用户已存在");
-        }
+        // 发送数据
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            // readystate为4，请求已完成
+            if (xhr.readyState ==4) {
+                if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                    // 解析请求返回的JSON数据
+                    //var data = JSON.parse(xhr.responseText);
+                    console.log(xhr.responseText);
+                    if (xhr.responseText == "exist") {
+                        alert("用户已存在");
+                    }
+                }
+            }
+        };
+        xhr.open("post","http://123.207.141.123/application/login.php",true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send("user=" + data);
+
         // 输入框置空
         document.getElementById("inputUsername3").value = "";
         document.getElementById("inputPhone3").value = "";
