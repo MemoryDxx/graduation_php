@@ -237,7 +237,6 @@ function reg() {
     user.user_pwd = document.getElementById("inputPassword4").value;
     // 序列化参数
     var data = JSON.stringify(user);
-    datapost(data,"http://123.207.141.123/application/reg.php");
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         // readystate为4，请求已完成
