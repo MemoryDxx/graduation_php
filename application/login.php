@@ -23,6 +23,7 @@
     $uemail = $obj->user_email;
     $uphone = $obj->user_phone;
     $upwd = $obj->user_pwd;
+
     $sql = "INSERT INTO user (uemail, uname, uphone, upwd)
     VALUES
     ('$uemail','$uname','$uphone','$upwd')";
@@ -30,8 +31,11 @@
     $sqlsel = "SELECT * FROM user
     WHERE uphone = $uphone";
 
-    if ($conn->query($sqlsel) === TRUE) {
+    $result = $conn->query($sqlsel);
+
+    if ($result['uphone'] == $uphone) {
       # code...
+      echo $result;
       echo "exist";
     }else if($conn->query($sql) === TRUE){
       # code...
