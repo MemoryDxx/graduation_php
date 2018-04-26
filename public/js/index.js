@@ -133,8 +133,6 @@ function login() {
         console.log(user);
 
         // 发送数据
-        var ex = "exist";
-        var su = "success";
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
             // readystate为4，请求已完成
@@ -142,7 +140,7 @@ function login() {
                 if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                     // 解析请求返回的JSON数据
                     //var data = JSON.parse(xhr.responseText);
-                    console.log(typeof(xhr.responseText));
+                    console.log(xhr.responseText);
                     if (xhr.responseText === "exist") {
                         alert("用户已存在");
                     }else if(xhr.responseText === "success"){
