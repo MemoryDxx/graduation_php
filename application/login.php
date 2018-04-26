@@ -31,14 +31,14 @@
     $sqlsel = "SELECT * FROM user
     WHERE uphone = '$uphone'";
 
-    $result = $conn->query($sqlsel);
+    $result = mysqli_query($conn,$sqlsel);
     echo $result;
 
     if ($result) {
       # code...
       echo $result;
       echo "exist";
-    }else if($conn->query($sql) === TRUE){
+    }else if(mysqli_query($conn,$sql) === TRUE){
       # code...
       echo "success";
     }else{
