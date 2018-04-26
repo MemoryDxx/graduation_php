@@ -207,6 +207,10 @@ nav{
     margin-top: 50px;
 }
 
+.house-lst{
+    height: 765px;
+}
+
 .house-lst li{
     list-style: none;
 }

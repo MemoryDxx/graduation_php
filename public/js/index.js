@@ -1,3 +1,48 @@
+// Cookie操作
+var CookieUtil = {
+    get: function (name) {
+        var cookieName = encodeURIComponent(name) + "=",
+            cookieStart = document.cookie.indexOf(cookieName),
+            cookieValue = null;
+        
+        if (cookieStart > -1) {
+            var cookieEnd = document.cookie.indexOf(";", cookieStart);
+            if (cookieEnd == -1) {
+                cookieEnd = document.cookie.length;
+            }
+            cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+
+            return cookieValue;
+        }
+    },
+
+    set: function (name, value, expires, path, domain, secure) {
+        var cookieText = encodeURIComponent(name) + "=" +
+                         encodeURIComponent(value);
+        if (expires instanceof Date) {
+            cookieText += "; expires=" + expires.toGMTString();
+        }
+
+        if(path){
+            cookieText += "; path=" + path;
+        }
+
+        if(domain){
+            cookieText += "; domain=" + domain;
+        }
+
+        if(secure){
+            cookieText += "; secure";
+        }
+
+        document.cookie = cookieText;
+    },
+
+    unset: function (name, path, domain, secure) {
+        this.set(name, "", new Date(0), path, domain, secure);
+    }
+};
+
 // 手机号检测
 function phoneCheck(params) {
     var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
@@ -185,10 +230,32 @@ function login() {
 
 // 登录
 function reg() {
+    var pc = document.getElementById("pcenter");
+    var bt = document.getElementById("lrbtn");
     var user = new Object();
     user.user_name = document.getElementById("inputUsername4").value;
     user.user_pwd = document.getElementById("inputPassword4").value;
     // 序列化参数
     var data = JSON.stringify(user);
     datapost(data,"http://123.207.141.123/application/reg.php");
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                var xhrres = JSON.parse(xhr.responseText);
+                console.log(xhr.responseText);
+                if (xhrres.msg === "regsc") {
+                    pc.style.display = "block";
+                    bt.style.display = "none";
+                    closepop();
+                    CookieUtil.set("name",xhrres.name);
+                }
+            }
+        }
+    };
+    xhr.open("post","http://123.207.141.123/application/reg.php",true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("reguser" + data);
 }
