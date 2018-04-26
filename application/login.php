@@ -35,7 +35,7 @@
     WHERE uphone = '$uphone'")) {
       # code...
       echo "exist";
-    }else if($conn->query($conn,$sql) === TRUE){
+    }else if($conn->query($sql) === TRUE){
       # code...
       echo "success";
     }else{
