@@ -14,9 +14,7 @@
     $uname = $obj->user_name;
     $upwd = $obj->user_pwd;
 
-    $sql = "SELECT upwd FROM user WHERE uname='$uname'";
-
-    $res = $conn->query($sql);
+    $res = $conn->query("SELECT upwd FROM user WHERE uname='$uname'");
     if(!$res){
         die('无法读取数据: ' . mysqli_error($conn));
     }
