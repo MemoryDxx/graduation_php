@@ -18,9 +18,9 @@
     if(!$res){
         die('无法读取数据: ' . mysqli_error($conn));
     }
-    var_dump($res);
+    // var_dump($res);
     $row=mysqli_fetch_assoc($res);
-    var_dump($row["upwd"]);
+    // var_dump($row["upwd"]);
     if ($row["upwd"] === $upwd) {
         # code...
         echo "success";
