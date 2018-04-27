@@ -259,3 +259,12 @@ function reg() {
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("reguser=" + data);
 }
+
+// 获取首页房屋列表
+function getlst() {
+    var ul = document.getElementById("lst-ul");
+    
+}
+
+// 背景，所做工作，展望，总结，存在的不足
+// 摘要：第一章到最后一章的压缩
