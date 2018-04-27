@@ -244,6 +244,12 @@ function reg() {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 console.log(xhr.responseText);
+                if (xhr.responseText === "success") {
+                    pc.style.display = "block";
+                    bt.style.display = "none";
+                    closepop();
+                    CookieUtil.set("name",user.user_name);
+                }
                 // var xhrres = JSON.parse(xhr.responseText);
                 
                 // if (xhrres.msg === "regsc") {
