@@ -23,14 +23,7 @@
     var_dump($row["upwd"]);
     if ($row["upwd"] === $upwd) {
         # code...
-        class jmsg {
-            public $msg = "";
-            public $name  = "";
-        }
-        $j = new jmsg();
-        $j->msg = "regsc";
-        $j->name = $uname;
-        echo $j;
+        echo "success";
     }
     // $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     // if($row['upwd'] === $upwd){
