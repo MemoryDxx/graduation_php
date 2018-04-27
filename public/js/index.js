@@ -244,7 +244,7 @@ function reg() {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 console.log(xhr.responseText);
-                console.log(xhr.responseText === "success");
+                console.log(xhr.responseText == "success");
                 if (xhr.responseText === "success") {
                     pc.style.display = "block";
                     bt.style.display = "none";
