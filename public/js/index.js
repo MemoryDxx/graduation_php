@@ -245,7 +245,7 @@ function reg() {
                 // 解析请求返回的JSON数据
                 var text = xhr.responseText;
                 console.log(text);
-                console.log(text.equals("success"));
+                console.log(text == "success");
                 if (xhr.responseText === "success") {
                     pc.style.display = "block";
                     bt.style.display = "none";
