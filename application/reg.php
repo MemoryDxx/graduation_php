@@ -20,7 +20,7 @@
     }
     var_dump($res);
     $row=mysqli_fetch_assoc($result);
-    var_dump($row["upwd"]);
+    var_dump($row);
     // $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     // if($row['upwd'] === $upwd){
     //     class jmsg {
