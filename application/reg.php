@@ -19,6 +19,8 @@
         die('无法读取数据: ' . mysqli_error($conn));
     }
     var_dump($res);
+    $row=mysqli_fetch_assoc($result);
+    var_dump($row["upwd"]);
     // $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     // if($row['upwd'] === $upwd){
     //     class jmsg {
@@ -31,4 +33,5 @@
     //     echo $j;
     // }
 
+    $conn->close();
 ?>
