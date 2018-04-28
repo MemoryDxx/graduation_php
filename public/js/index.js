@@ -48,7 +48,8 @@ function checkCookie() {
     if (CookieUtil.get("name") == null) {
         alert("请登录");
     }else{
-        document.getElementById("pcenter").style.display = "block";
+        var pcen = document.getElementById("pcenter");
+        pcen.style.display = "block";
     }
 }
 
