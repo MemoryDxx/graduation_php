@@ -43,6 +43,15 @@ var CookieUtil = {
     }
 };
 
+// 检测cookie
+function checkCookie() {
+    if (CookieUtil.get("name") == null) {
+        alert("请登录");
+    }else{
+        document.getElementById("pcenter").style.display = "block";
+    }
+}
+
 // 手机号检测
 function phoneCheck(params) {
     var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
