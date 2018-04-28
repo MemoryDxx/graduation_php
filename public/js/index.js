@@ -312,7 +312,7 @@ function realease() {
             }
         }
     };
-    xhr.open("post",url,true);
+    xhr.open("post","http://123.207.141.123/application/realse.php",true);
     xhr.send("relhouse=" + data);
 }
 
