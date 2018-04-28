@@ -299,6 +299,7 @@ function realease() {
     data.append("relloc",wz);
     data.append("relpri",jg);
     data.append("relpic",pic);
+    console.log(data);
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
     var xhr = new XMLHttpRequest();
