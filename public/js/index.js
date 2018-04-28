@@ -280,7 +280,7 @@ function reg() {
 }
 
 // 发布房源
-function realease() {
+function rel() {
     var xqm = document.getElementById("relname").value; //小区名
     var hx = document.getElementById("reltype").value;  //户型
     var mj = document.getElementById("relarea").value;  //面积
