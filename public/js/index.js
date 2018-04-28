@@ -49,6 +49,7 @@ function checkCookie() {
         alert("请登录");
     }else{
         var pcen = document.getElementById("pcenter");
+        console.log(pcen);
         pcen.style.display = "block";
     }
 }
