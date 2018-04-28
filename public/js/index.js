@@ -279,11 +279,49 @@ function reg() {
     xhr.send("reguser=" + data);
 }
 
+// 发布房源
+function realease() {
+    var xqm = document.getElementById("relname").value; //小区名
+    var hx = document.getElementById("reltype").value;  //户型
+    var mj = document.getElementById("relarea").value;  //面积
+    var lc = document.getElementById("relfloor").value; //楼层
+    var cx = document.getElementById("relori").value;   //朝向
+    var wz = document.getElementById("relloc").value;   //楼栋号
+    var jg = document.getElementById("relpri").value;   //价格
+    var pic = document.getElementById("relpic").files[0];  //图片
+
+    var data = new FormData();
+    data.append("relname",xpm);
+    data.append("reltype",hx);
+    data.append("relarea",mj);
+    data.append("relfloor",lc);
+    data.append("relori",cx);
+    data.append("relloc",wz);
+    data.append("relpri",jg);
+    data.append("relpic",pic);
+
+    // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                //var data = JSON.parse(xhr.responseText);
+                console.log(xhr.responseText);
+            }
+        }
+    };
+    xhr.open("post",url,true);
+    xhr.send("relhouse=" + data);
+}
+
 // 获取首页房屋列表
 function getlst() {
     var ul = document.getElementById("lst-ul");
     
 }
+
 
 // 背景，所做工作，展望，总结，存在的不足
 // 摘要：第一章到最后一章的压缩
