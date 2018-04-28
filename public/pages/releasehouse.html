@@ -126,6 +126,18 @@
     </div>
 
     <script src="../js/index.js"></script>
-    <script onload="checkCookie();"></script>
+    <script type="text/javascript">
+        //用window的onload事件，窗体加载完毕的时候
+        window.onload=function(){
+            //do something
+            if (CookieUtil.get("name") == null) {
+                alert("请登录");
+            }else{
+                var pcen = document.getElementById("pcenter");
+                console.log(pcen);
+                pcen.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
