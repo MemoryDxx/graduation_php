@@ -304,10 +304,13 @@ function rel() {
         url: 'http://123.207.141.123/application/realse.php',
         type: 'POST',
         data: formdata,
-        dataType: 'JSON',
+        dataType: 'text',
         cache: false,
         processData: false,
         contentType: false,
+        error: function (XMLHttpRequest, ) {
+            
+        },
         success: function (data) {
             console.log(data);
         }
