@@ -289,8 +289,8 @@ function rel() {
     var wz = document.getElementById("relloc").value;   //楼栋号
     var jg = document.getElementById("relpri").value;   //价格
     console.log(xpm);
-    var pic = document.getElementById("relpic").files[0];  //图片
-    console.log(pic);
+    // var pic = document.getElementById("relpic").files[0];  //图片
+    // console.log(pic);
 
     var data = new FormData();
     data.append("relname",xpm);
@@ -303,7 +303,7 @@ function rel() {
     data.append("relpic",pic);
     console.log(data);
 
-    datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
+    // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
     // var xhr = new XMLHttpRequest();
     // xhr.onreadystatechange = function () {
     //     // readystate为4，请求已完成
