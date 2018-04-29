@@ -30,10 +30,14 @@
     $sqlsel = "SELECT * FROM user
     WHERE uphone = '$uphone'";
 
-    if ($conn->query("SELECT * FROM user
-    WHERE uphone = '$uphone'")) {
+    if ($conn->query("SELECT uname FROM user
+    WHERE uname = '$uname'")) {
       # code...
-      echo "exist";
+      $row=mysqli_fetch_assoc("SELECT uname FROM user WHERE uname = '$uname'");
+      if ($row["uname"] === $uname) {
+        # code...
+        echo "exist";
+      }
     }else if($conn->query($sql) === TRUE){
       # code...
       echo "success";
