@@ -22,7 +22,7 @@
 
     echo $rpicname;
     echo $rpictmp;
-    if (move_uploaded_file($rpictmp,$picpath.$rpicname.".png")) {
+    if (move_uploaded_file($rpictmp,"/public/photos/{$_FILES['relpic']['name']}")) {
         # code...
         echo "success";
 
