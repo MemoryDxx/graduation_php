@@ -13,7 +13,8 @@
     var_dump($_POST);
     var_dump(file_get_contents($_FILES["relpic"]["name"]));
     var_dump($_POST["relhouse"]);
-    var_dump($_FILES["relpic"]);
+    var_dump($_FILES['relpic']['name']);
+    var_dump($_FILES["relpic"]["name"]);
 
 
     $conn->close();
