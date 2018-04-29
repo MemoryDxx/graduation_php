@@ -1,4 +1,5 @@
 <?php
+    header("Content-Type:multipart/form-data")
     $servername = "localhost";
     $username = "root";
     $password = "mysql";
