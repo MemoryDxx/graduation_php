@@ -11,7 +11,7 @@
 
     var_dump($_FILES);
     var_dump($_POST);
-    var_dump(file_get_contents('php://input'));
+    var_dump(file_get_contents($_FILES["relpic"]["tmp_name"]));
     var_dump($_POST["relhouse"]);
     var_dump($_FILES["relpic"]);
 
