@@ -20,14 +20,15 @@
     $rpictmp = $_FILES['relpic']['tmp_name'];
     $picpath = 'photos/';
 
+    echo $rpicname;
+    echo $rpictmp;
     if (move_uploaded_file($rpictmp,$picpath.$rpicname.".png")) {
         # code...
         echo "success";
-        
+
     }
 
     echo $_POST['relname'];
-    echo json_decode($_POST);
     echo $_FILES['relpic']['name'];
 
 
