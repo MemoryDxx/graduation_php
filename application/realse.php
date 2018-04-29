@@ -22,11 +22,11 @@
 
     echo $rpicname;
     echo $rpictmp;
-    if (file_exists("/public/photos/".$_FILES['relpic']['name'])) {
+    if (file_exists("photos/".$_FILES['relpic']['name'])) {
         # code...
         echo $_FILES['relpic']['name']."exist";
     }else{
-        move_uploaded_file($_FILES['relpic']['tmp_name'],"/public/photos/".$_FILES['relpic']['name']);
+        move_uploaded_file($_FILES['relpic']['tmp_name'],"photos/".$_FILES['relpic']['name']);
         echo "success";
     }
 
