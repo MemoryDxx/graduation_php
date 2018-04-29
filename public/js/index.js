@@ -290,45 +290,56 @@ function rel() {
     var jg = document.getElementById("relpri").value;   //价格
     var pic = document.getElementById("relpic").files[0];  //图片
 
-    var data = new FormData();
-    data.append("relname",xqm);
-    data.append("reltype",hx);
-    data.append("relarea",mj);
-    data.append("relfloor",lc);
-    data.append("relori",cx);
-    data.append("relloc",wz);
-    data.append("relpri",jg);
-    // data.append("relpic",pic);
-    console.log(data.get("relname"));
-    console.log(data.get("reltype"));
-    console.log(data.get("relarea"));
-    console.log(data.get("relfloor"));
-    console.log(data.get("relori"));
-    console.log(data.get("relloc"));
-    console.log(data.get("relpri"));
-    // console.log(data.get("relpic"));
-    for(var val of data.values()){
-        console.log(val);
-    }
-    var data1 = JSON.stringify(data);
-    console.log(data1);
+    var formdata = new FormData();
+    formdata.append("relname",xqm);
+    formdata.append("reltype",hx);
+    formdata.append("relarea",mj);
+    formdata.append("relfloor",lc);
+    formdata.append("relori",cx);
+    formdata.append("relloc",wz);
+    formdata.append("relpri",jg);
+    formdata.append("relpic",pic);
+
+    $.ajax({
+        url: 'http://123.207.141.123/application/realse.php',
+        type: 'POST',
+        data: formdata,
+        dataType: 'JSON',
+        cache: false,
+        processData: false,
+        contentType: false
+    }).done(console.log(xhr.responseText));
+
+    // console.log(data.get("relname"));
+    // console.log(data.get("reltype"));
+    // console.log(data.get("relarea"));
+    // console.log(data.get("relfloor"));
+    // console.log(data.get("relori"));
+    // console.log(data.get("relloc"));
+    // console.log(data.get("relpri"));
+    // // console.log(data.get("relpic"));
+    // for(var val of data.values()){
+    //     console.log(val);
+    // }
+    // var data1 = JSON.stringify(data);
+    // console.log(data1);
 
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        // readystate为4，请求已完成
-        if (xhr.readyState ==4) {
-            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-                // 解析请求返回的JSON数据
-                //var data = JSON.parse(xhr.responseText);
-                console.log(xhr.responseText);
-            }
-        }
-    };
-    xhr.open("post","http://123.207.141.123/application/realse.php",true);
-    xhr.setRequestHeader("Content-Type","multipart/form-data");
-    xhr.send("relhouse=" + data);
+    // var xhr = new XMLHttpRequest();
+    // xhr.onreadystatechange = function () {
+    //     // readystate为4，请求已完成
+    //     if (xhr.readyState ==4) {
+    //         if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+    //             // 解析请求返回的JSON数据
+    //             //var data = JSON.parse(xhr.responseText);
+    //             console.log(xhr.responseText);
+    //         }
+    //     }
+    // };
+    // xhr.open("post","http://123.207.141.123/application/realse.php",true);
+    // xhr.setRequestHeader("Content-Type","multipart/form-data");
+    // xhr.send("relhouse=" + data);
 }
 
 // 获取首页房屋列表
