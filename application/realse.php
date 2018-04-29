@@ -13,7 +13,7 @@
     var_dump($_POST["relhouse"]);
     var_dump(json_decode($_POST));
     var_dump(json_decode($_POST["relhouse"]));
-    var_dump($_FILES);
+    var_dump($_FILES["relpic"]);
 
 
     $conn->close();
