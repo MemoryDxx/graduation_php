@@ -30,20 +30,35 @@
     $sqlsel = "SELECT * FROM user
     WHERE uphone = '$uphone'";
 
-    if ($conn->query("SELECT uname FROM user
-    WHERE uname = '$uname'")) {
+    $res = $conn->query("SELECT uname FROM user WHERE uname = '$uname'");
+    if(!$res){
+      die('无法读取数据: ' . mysqli_error($conn));
+    }
+    $row=mysqli_fetch_assoc($res);
+    if ($row["uname"] === $uname) {
       # code...
-      $row=mysqli_fetch_assoc("SELECT uname FROM user WHERE uname = '$uname'");
-      if ($row["uname"] === $uname) {
-        # code...
-        echo "exist";
-      }
+      echo "exist";
     }else if($conn->query($sql) === TRUE){
       # code...
       echo "success";
     }else{
       echo "error: " . $sql . "<br>" . $conn->error;
     }
+
+    // if ($conn->query("SELECT uname FROM user
+    // WHERE uname = '$uname'")) {
+    //   # code...
+    //   $row=mysqli_fetch_assoc("SELECT uname FROM user WHERE uname = '$uname'");
+    //   if ($row["uname"] === $uname) {
+    //     # code...
+    //     echo "exist";
+    //   }
+    // }else if($conn->query($sql) === TRUE){
+    //   # code...
+    //   echo "success";
+    // }else{
+    //   echo "error: " . $sql . "<br>" . $conn->error;
+    // }
 
     $conn->close();
 ?>
