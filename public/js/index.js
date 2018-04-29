@@ -291,14 +291,14 @@ function rel() {
     var pic = document.getElementById("relpic").files[0];  //图片
 
     var data = new FormData();
-    data.append("relname",xqm);
-    data.append("reltype",hx);
-    data.append("relarea",mj);
-    data.append("relfloor",lc);
-    data.append("relori",cx);
-    data.append("relloc",wz);
-    data.append("relpri",jg);
-    data.append("relpic",pic);
+    data.set("relname",xqm);
+    data.set("reltype",hx);
+    data.set("relarea",mj);
+    data.set("relfloor",lc);
+    data.set("relori",cx);
+    data.set("relloc",wz);
+    data.set("relpri",jg);
+    data.set("relpic",pic);
 
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
