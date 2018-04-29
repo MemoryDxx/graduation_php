@@ -291,14 +291,14 @@ function rel() {
     var pic = document.getElementById("relpic").files[0];  //图片
 
     var data = new FormData();
-    data.set("relname",xqm);
-    data.set("reltype",hx);
-    data.set("relarea",mj);
-    data.set("relfloor",lc);
-    data.set("relori",cx);
-    data.set("relloc",wz);
-    data.set("relpri",jg);
-    data.set("relpic",pic);
+    data.append("relname",xqm);
+    data.append("reltype",hx);
+    data.append("relarea",mj);
+    data.append("relfloor",lc);
+    data.append("relori",cx);
+    data.append("relloc",wz);
+    data.append("relpri",jg);
+    data.append("relpic",pic);
     console.log(data.get("relname"));
     console.log(data.get("reltype"));
     console.log(data.get("relarea"));
