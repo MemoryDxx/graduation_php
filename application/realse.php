@@ -19,7 +19,7 @@
     $rperson = $_POST['relperson'];
     $rpicname = $_FILES['relpic']['name'];
     $rpictmp = $_FILES['relpic']['tmp_name'];
-    $picpath = '../public/photos/';
+    $picpath = '../public/photos/'.$_FILES['relpic']['name'];
 
     // echo $rpicname;
     // echo $rpictmp;
@@ -31,7 +31,7 @@
         echo "success";
         if ($conn->query("INSERT INTO house (house_name, house_type, house_area, house_floor, house_ori, house_loc, house_pri, house_pic)
         VALUES
-        ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath.$rpicname')")) {
+        ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath')")) {
             # code...
             echo "insert success";
         }
