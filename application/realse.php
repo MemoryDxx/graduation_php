@@ -9,18 +9,18 @@
         die('Could not connect: ' . mysqli_connect_error());
     }
 
-    $json = file_get_contents("php://input");
-    echo $json;
-    var_dump($_POST);
-    var_dump(file_get_contents($_POST));
-    var_dump($_POST["relhouse"]);
-    var_dump(file_get_contents($_POST["relhouse"]));
-    var_dump(json_decode($_POST));
-    var_dump(file_get_contents(json_decode($_POST)));
-    var_dump(json_decode($_POST["relhouse"]));
-    var_dump($_FILES["relpic"]);
-    var_dump(file_get_contents($_FILES));
-    var_dump(file_get_contents($_FILES["relhouse"]));
+    $name = isset($_POST['relname']) ? $_POST['relname'] : '';
+    $filename = time().substr($_FILES['relpic']['name'], strrpos($_FILES['relpic']['name'], '.'));
+
+    $respon = array();
+
+    if (move_uploaded_file($_FILES['relpic']['tmp_name'],$filename)) {
+        # code...
+        $respon['name'] = $name;
+        $respon['pic'] = $filename;
+    }
+
+    echo json_encode($respon);
 
 
     $conn->close();

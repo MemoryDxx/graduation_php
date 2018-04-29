@@ -299,9 +299,6 @@ function rel() {
     data.append("relloc",wz);
     data.append("relpri",jg);
     data.append("relpic",pic);
-    data1 = JSON.stringify(data);
-    console.log(data.getAll);
-    console.log(data1);
 
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
