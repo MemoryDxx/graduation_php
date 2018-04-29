@@ -9,7 +9,7 @@
         die('Could not connect: ' . mysqli_connect_error());
     }
 
-    var_dump($_POST);
+    var_dump($_POST["relhouse"]);
     var_dump($_FILES);
 
 
