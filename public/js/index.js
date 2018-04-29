@@ -298,7 +298,7 @@ function rel() {
     data.append("relori",cx);
     data.append("relloc",wz);
     data.append("relpri",jg);
-    data.append("relpic",pic);
+    // data.append("relpic",pic);
     console.log(data.get("relname"));
     console.log(data.get("reltype"));
     console.log(data.get("relarea"));
@@ -306,10 +306,12 @@ function rel() {
     console.log(data.get("relori"));
     console.log(data.get("relloc"));
     console.log(data.get("relpri"));
-    console.log(data.get("relpic"));
+    // console.log(data.get("relpic"));
     for(var val of data.values()){
         console.log(val);
     }
+    var data1 = JSON.stringify(data);
+    console.log(data);
 
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");

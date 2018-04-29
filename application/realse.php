@@ -9,6 +9,8 @@
         die('Could not connect: ' . mysqli_connect_error());
     }
 
+    echo $_POST['relname'];
+    echo json_decode($_POST);
     echo $_FILES['relpic']['name'];
 
 
