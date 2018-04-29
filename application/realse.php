@@ -10,10 +10,15 @@
     }
 
     var_dump($_POST);
+    var_dump(file_get_contents($_POST));
     var_dump($_POST["relhouse"]);
+    var_dump(file_get_contents($_POST["relhouse"]));
     var_dump(json_decode($_POST));
+    var_dump(file_get_contents(json_decode($_POST)));
     var_dump(json_decode($_POST["relhouse"]));
     var_dump($_FILES["relpic"]);
+    var_dump(file_get_contents($_FILES));
+    var_dump(file_get_contents($_FILES["relhouse"]));
 
 
     $conn->close();
