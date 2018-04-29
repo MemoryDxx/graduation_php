@@ -307,6 +307,9 @@ function rel() {
     console.log(data.get("relloc"));
     console.log(data.get("relpri"));
     console.log(data.get("relpic"));
+    for(var val of data.values()){
+        console.log(val);
+    }
 
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
