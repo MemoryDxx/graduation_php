@@ -288,15 +288,7 @@ function rel() {
     var cx = document.getElementById("relori").value;   //朝向
     var wz = document.getElementById("relloc").value;   //楼栋号
     var jg = document.getElementById("relpri").value;   //价格
-    console.log(xqm);
-    console.log(hx);
-    console.log(mj);
-    console.log(lc);
-    console.log(cx);
-    console.log(wz);
-    console.log(jg);
     var pic = document.getElementById("relpic").files[0];  //图片
-    console.log(pic);
 
     var data = new FormData();
     data.append("relname",xqm);
@@ -307,24 +299,22 @@ function rel() {
     data.append("relloc",wz);
     data.append("relpri",jg);
     data.append("relpic",pic);
-    console.log(data.get("relname"));
-    console.log(data.get("relloc"));
-    console.log(data.get("relpic"));
+
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
-    // var xhr = new XMLHttpRequest();
-    // xhr.onreadystatechange = function () {
-    //     // readystate为4，请求已完成
-    //     if (xhr.readyState ==4) {
-    //         if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-    //             // 解析请求返回的JSON数据
-    //             //var data = JSON.parse(xhr.responseText);
-    //             console.log(xhr.responseText);
-    //         }
-    //     }
-    // };
-    // xhr.open("post","http://123.207.141.123/application/realse.php",true);
-    // xhr.send("relhouse=" + data);
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                //var data = JSON.parse(xhr.responseText);
+                console.log(xhr.responseText);
+            }
+        }
+    };
+    xhr.open("post","http://123.207.141.123/application/realse.php",true);
+    xhr.send("relhouse=" + data);
 }
 
 // 获取首页房屋列表
