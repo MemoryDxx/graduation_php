@@ -22,10 +22,12 @@
 
     echo $rpicname;
     echo $rpictmp;
-    if (move_uploaded_file($rpictmp,$picpath.$_FILES['relpic']['name'])) {
+    if (file_exists("/public/photos/".$_FILES['relpic']['name'])) {
         # code...
+        echo $_FILES['relpic']['name']."exist";
+    }else{
+        move_uploaded_file($_FILES['relpic']['tmp_name'],"/public/photos/".$_FILES['relpic']['name']);
         echo "success";
-
     }
 
     echo $_POST['relname'];
