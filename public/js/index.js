@@ -293,7 +293,7 @@ function rel() {
     // console.log(pic);
 
     var data = new FormData();
-    data.append("relname",xpm);
+    data.append("relname",xqm);
     data.append("reltype",hx);
     data.append("relarea",mj);
     data.append("relfloor",lc);
