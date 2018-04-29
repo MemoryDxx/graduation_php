@@ -299,6 +299,14 @@ function rel() {
     data.set("relloc",wz);
     data.set("relpri",jg);
     data.set("relpic",pic);
+    console.log(data.get("relname"));
+    console.log(data.get("reltype"));
+    console.log(data.get("relarea"));
+    console.log(data.get("relfloor"));
+    console.log(data.get("relori"));
+    console.log(data.get("relloc"));
+    console.log(data.get("relpri"));
+    console.log(data.get("relpic"));
 
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
