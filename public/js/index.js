@@ -288,7 +288,7 @@ function rel() {
     var cx = document.getElementById("relori").value;   //朝向
     var wz = document.getElementById("relloc").value;   //楼栋号
     var jg = document.getElementById("relpri").value;   //价格
-    console.log(xpm);
+    console.log(xqm);
     // var pic = document.getElementById("relpic").files[0];  //图片
     // console.log(pic);
 
