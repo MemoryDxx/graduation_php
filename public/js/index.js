@@ -300,7 +300,7 @@ function rel() {
     data.append("relpri",jg);
     data.append("relpic",pic);
     data1 = JSON.stringify(data);
-    console.log(data);
+    console.log(data.getAll);
     console.log(data1);
 
 
