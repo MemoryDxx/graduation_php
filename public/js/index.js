@@ -316,7 +316,6 @@ function rel() {
         }
     };
     xhr.open("post","http://123.207.141.123/application/realse.php",true);
-    xhr.setRequestHeader("Content-type","multipart/form-data");
     xhr.send("relhouse=" + data);
 }
 
