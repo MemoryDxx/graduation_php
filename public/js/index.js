@@ -307,8 +307,11 @@ function rel() {
         dataType: 'JSON',
         cache: false,
         processData: false,
-        contentType: false
-    }).done(console.log(xhr.responseText));
+        contentType: false,
+        success: function (data) {
+            console.log(data);
+        }
+    });
 
     // console.log(data.get("relname"));
     // console.log(data.get("reltype"));
