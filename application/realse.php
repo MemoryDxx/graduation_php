@@ -16,12 +16,13 @@
     $rori = $_POST['relori'];
     $rloc = $_POST['relloc'];
     $rpri = $_POST['relpri'];
+    $rperson = $_POST['relperson'];
     $rpicname = $_FILES['relpic']['name'];
     $rpictmp = $_FILES['relpic']['tmp_name'];
-    $picpath = '/public/photos/';
+    $picpath = '../public/photos/';
 
-    echo $rpicname;
-    echo $rpictmp;
+    // echo $rpicname;
+    // echo $rpictmp;
     if (file_exists("../public/photos/".$_FILES['relpic']['name'])) {
         # code...
         echo $_FILES['relpic']['name']."exist";
@@ -30,8 +31,15 @@
         echo "success";
     }
 
-    echo $_POST['relname'];
-    echo $_FILES['relpic']['name'];
+    if ($conn->query("INSERT INTO house (house_name, house_type, house_area, house_floor, house_ori, house_loc, house_pri, house_pic)
+    VALUES
+    ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath.$rpicname')")) {
+      # code...
+      echo "insert success";
+    }
+
+    // echo $_POST['relname'];
+    // echo $_FILES['relpic']['name'];
 
 
     $conn->close();

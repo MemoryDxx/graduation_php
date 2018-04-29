@@ -289,6 +289,7 @@ function rel() {
     var wz = document.getElementById("relloc").value;   //楼栋号
     var jg = document.getElementById("relpri").value;   //价格
     var pic = document.getElementById("relpic").files[0];  //图片
+    var person = CookieUtil.get("name");    //发布者用户名
 
     var formdata = new FormData();
     formdata.append("relname",xqm);
@@ -298,6 +299,7 @@ function rel() {
     formdata.append("relori",cx);
     formdata.append("relloc",wz);
     formdata.append("relpri",jg);
+    formdata.append("relperson",person);
     formdata.append("relpic",pic);
 
     $.ajax({
