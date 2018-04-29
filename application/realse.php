@@ -18,11 +18,11 @@
     $rpri = $_POST['relpri'];
     $rpicname = $_FILES['relpic']['name'];
     $rpictmp = $_FILES['relpic']['tmp_name'];
-    $picpath = 'photos/';
+    $picpath = '/public/photos/';
 
     echo $rpicname;
     echo $rpictmp;
-    if (move_uploaded_file($rpictmp,"/public/photos/{$_FILES['relpic']['name']}")) {
+    if (move_uploaded_file($rpictmp,$picpath.$_FILES['relpic']['name'])) {
         # code...
         echo "success";
 
