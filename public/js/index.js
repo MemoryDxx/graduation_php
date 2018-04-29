@@ -303,20 +303,20 @@ function rel() {
     data.append("relpic",pic);
     console.log(data);
 
-    // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        // readystate为4，请求已完成
-        if (xhr.readyState ==4) {
-            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-                // 解析请求返回的JSON数据
-                //var data = JSON.parse(xhr.responseText);
-                console.log(xhr.responseText);
-            }
-        }
-    };
-    xhr.open("post","http://123.207.141.123/application/realse.php",true);
-    xhr.send("relhouse=" + data);
+    datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
+    // var xhr = new XMLHttpRequest();
+    // xhr.onreadystatechange = function () {
+    //     // readystate为4，请求已完成
+    //     if (xhr.readyState ==4) {
+    //         if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+    //             // 解析请求返回的JSON数据
+    //             //var data = JSON.parse(xhr.responseText);
+    //             console.log(xhr.responseText);
+    //         }
+    //     }
+    // };
+    // xhr.open("post","http://123.207.141.123/application/realse.php",true);
+    // xhr.send("relhouse=" + data);
 }
 
 // 获取首页房屋列表
