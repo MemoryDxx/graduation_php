@@ -311,7 +311,7 @@ function rel() {
         console.log(val);
     }
     var data1 = JSON.stringify(data);
-    console.log(data);
+    console.log(data1);
 
 
     // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
