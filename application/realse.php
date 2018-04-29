@@ -34,6 +34,8 @@
         ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath')")) {
             # code...
             echo "insert success";
+        }else{
+            echo "error: " . $sql . "<br>" . $conn->error;
         }
     }
 
