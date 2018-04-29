@@ -9,7 +9,7 @@
         die('Could not connect: ' . mysqli_connect_error());
     }
 
-    echo $_FILES;
+    echo $_FILES['relpic']['name'];
 
 
     $conn->close();
