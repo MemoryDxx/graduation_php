@@ -368,6 +368,18 @@ function house() {
                     // 解析请求返回的JSON数据
                     var data = JSON.parse(xhr.responseText);
                     console.log(data);
+                    ttl.innerHTML = data.house_name;
+                    pic.src = data.house_pic;
+                    pri.innerHTML = data.house_pri;
+                    area.innerHTML = data.house_area;
+                    tp.innerHTML = data.house_type;
+                    ori.innerHTML = data.house_ori;
+                    fl.innerHTML = data.house_floor;
+                    xq.innerHTML = data.house_name;
+                    loc.innerHTML = data.house_loc;
+                    uer.innerHTML = data.uname;
+                    uerphone.innerHTML = data.uphone;
+                    bz.innerHTML = data.beizhu;
                 }
             }
         };
