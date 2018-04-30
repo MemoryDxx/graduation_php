@@ -436,9 +436,9 @@ function pc() {
         if (xhr.readyState ==4) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
-                // var data = JSON.parse(xhr.responseText);
+                var data = JSON.parse(xhr.responseText);
                 // 头像
-                console.log(xhr.responseText);
+                console.log(data);
                 pcupic.src = xhr.responseText;
                 console.log(pcupic.src);
                 var reg = "public/";
