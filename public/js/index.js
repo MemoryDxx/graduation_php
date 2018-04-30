@@ -93,6 +93,15 @@ function unameCheck(params) {
     }
 }
 
+// 获取json长度
+function getJsonLen(params) {
+    var len = 0;
+    for(var item in params){
+        len++;
+    }
+    return len-1;
+}
+
 // 点击注册登录
 function lrbtn() {
     var logwindow = document.getElementsByClassName("reg-login-panel");
@@ -441,7 +450,7 @@ function pc() {
                 console.log(data);
                 console.log(data[2]);
                 console.log(data[2].house_name);
-                console.log(data.length);
+                console.log(getJsonLen(data));
                 console.log(data.upic);
                 pcupic.src = data.upic;
                 console.log(pcupic.src);
