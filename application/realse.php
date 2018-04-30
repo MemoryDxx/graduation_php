@@ -18,6 +18,7 @@
     $rloc = $_POST['relloc'];
     $rpri = $_POST['relpri'];
     $rperson = $_POST['relperson'];
+    $rbei = $_POST['relbei'];
     $rpicname = $_FILES['relpic']['name'];
     $rpictmp = $_FILES['relpic']['tmp_name'];
     $picpath = '../public/photos/'.$_FILES['relpic']['name'];
@@ -31,9 +32,9 @@
         move_uploaded_file($_FILES['relpic']['tmp_name'],"../public/photos/".$_FILES['relpic']['name']);
         echo "success";
         mysqli_query("set names 'utf8'");
-        if ($conn->query("INSERT INTO house (house_name, house_type, house_area, house_floor, house_ori, house_loc, house_pri, house_pic, uname)
+        if ($conn->query("INSERT INTO house (house_name, house_type, house_area, house_floor, house_ori, house_loc, house_pri, house_pic, uname, beizhu)
         VALUES
-        ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath','$rperson')")) {
+        ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath','$rperson','$rbei')")) {
             # code...
             echo "insert success";
         }else{

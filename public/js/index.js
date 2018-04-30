@@ -290,6 +290,7 @@ function rel() {
     var jg = document.getElementById("relpri").value;   //价格
     var pic = document.getElementById("relpic").files[0];  //图片
     var person = CookieUtil.get("name");    //发布者用户名
+    var bz = document.getElementById("relbei").value;   //备注
 
     var formdata = new FormData();
     formdata.append("relname",xqm);
@@ -301,6 +302,7 @@ function rel() {
     formdata.append("relpri",jg);
     formdata.append("relperson",person);
     formdata.append("relpic",pic);
+    formdata.append("relbei",bz);
 
     $.ajax({
         url: 'http://123.207.141.123/application/realse.php',
@@ -315,6 +317,9 @@ function rel() {
         },
         success: function (data) {
             console.log(data);
+            if (data === 'success') {
+                window.location.href = "http://123.207.141.123/public/house.html?hid=" + hid;
+            }
         }
     });
 
