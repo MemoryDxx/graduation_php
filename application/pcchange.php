@@ -36,6 +36,7 @@
     $row1 = mysqli_fetch_assoc($res1);
     $userid = $row1['uid'];
     $conn->query("UPDATE user SET uname='$newuname' WHERE uid='$userid'");
+    $conn->query("UPDATE house SET uname='$newuname' WHERE uname='$olduname'");
 
     // 上传头像
     if (file_exists("../public/photos/upic/".$_FILES['pic']['name'])) {
