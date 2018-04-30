@@ -409,6 +409,7 @@ function getupic(uname, upic) {
                 // 解析请求返回的JSON数据
                 // var data = JSON.parse(xhr.responseText);
                 console.log(xhr.responseText);
+                upic = "";
                 upic = xhr.responseText.substr(17);
                 var reg = "pages";
                 var src1 = upic.replace(new RegExp(reg),"photos/upic");
