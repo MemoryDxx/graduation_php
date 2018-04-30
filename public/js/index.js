@@ -374,7 +374,7 @@ function house() {
                     uerpic.src = data.upic.substr(17);
                     var reg = "pages";
                     var src = pic.src.replace(new RegExp(reg),"photos");
-                    var src1 = uerpic.src.replace(new RegExp(reg),"photos");
+                    var src1 = uerpic.src.replace(new RegExp(reg),"photos/upic");
                     pic.src = src;
                     uerpic.src = src1;
                     console.log(src);
