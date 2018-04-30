@@ -399,5 +399,42 @@ function house() {
     }
 }
 
+// 获取头像
+function getupic(uname, upic) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                var data = JSON.parse(xhr.responseText);
+                console.log(data);
+                upic.src = data.upic.substr(17);
+                var reg = "pages";
+                var src1 = upic.src.replace(new RegExp(reg),"photos/upic");
+                upic.src = src1;
+            }
+        }
+    };
+    xhr.open("post",url,true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send(data);
+}
+
+// 个人中心初始化
+function pc() {
+    var pcuname = document.getElementById("pcuname");
+    var pcupic = document.getElementById("nupic");
+    var pcupwd = document.getElementById("pcupwd").value;
+    var npcupwd = document.getElementById("npcupwd").value;
+    var npcupwd1 = document.getElementById("npcupwd1").value;
+
+    pcuname.value = CookieUtil.get("name");
+
+    // 获取头像
+    getupic(pcuname, pcupic);
+    // 获取已发布房源
+    
+}
 // 背景，所做工作，展望，总结，存在的不足
 // 摘要：第一章到最后一章的压缩

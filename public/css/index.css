@@ -390,3 +390,61 @@ nav{
     margin: 0 auto;
     margin-top: 100px;
 }
+
+/* pc.html */
+#pc{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pcform{
+    width: 50%;
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#nupic{
+    position: relative;
+    float: right;
+    width: 144px;
+    height: 144px;
+    margin-top: 50px;
+    margin-right: 100px;
+}
+
+#pcbtn{
+    display: table;
+    position: relative;
+    float: none;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.hr{
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid #e4e3e3;
+}
+
+.panel-bt{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.pcimglst{
+    width: 40px;
+    height: 40px;
+}
+
+.pchname{
+    margin-right: 20px;
+}
+
+.panel-bt .pcdel{
+    float: right;
+    line-height: 3;
+    margin-left: 10px;
+}

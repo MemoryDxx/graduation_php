@@ -32,10 +32,8 @@
                 </div>
                 <!-- 顶部导航栏右侧 -->
                 <div class="navbar-right log_reg dropdown">
-                    <!-- 注册登录按钮 -->
-                    <a id="lrbtn" class="btn btn-default" href="#" role="button" onclick="lrbtn();">注册/登录</a>
                     <!-- 个人中心 -->
-                    <div id="pcenter" class="btn-group user_center">
+                    <div id="pcenter" class="btn-group user_center" style="display: block;">
                         <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-user" id="usericon" aria-hidden="true"></span>
                             个人中心
@@ -60,44 +58,53 @@
 
     <!--首页主体-->
     <div class="house_bd">
-        <div class="panel panel-default">
+        <div id="pc" class="panel panel-default">
             <!-- 房屋详情标题 -->
             <div class="panel-heading house_ttl">
-                <span id="httl">标题</span> 
+                <span>个人中心</span> 
             </div>
             <!-- 房屋详情内容 -->
             <div class="panel-body">
-                <div class="panel-lf">
-                    <img id="picid" src="" alt="">
-                </div>
-                <div class="panel-rt">
-                    <div class="house-pri">
-                        <span id="hpri" class="total">价格</span>
-                        元/月
+                <form class="pcform">
+                    <div class="form-group">
+                        <label for="InputEmail1">用户名</label>
+                        <input type="text" class="form-control" id="pcuname" placeholder="用户名">
                     </div>
-                    <div class="house-zf">
-                        <p id="harea" class="zf-lf">面积&#58;</p>
-                        <p id="htype" class="zf-lf">户型&#58;</p>
-                        <p id="hori" class="zf-lf">朝向&#58;</p>
-                        <p id="hfloor" class="zf-lf">楼层&#58;</p>
-                        <p id="hname">小区&#58;</p>
-                        <p id="hloc">位置&#58;</p>
+                    <div class="form-group">
+                        <label for="InputPassword1">原密码</label>
+                        <input type="password" class="form-control" id="pcupwd" placeholder="原密码">
                     </div>
-                    <div class="brokerinfo">
-                        <img class="brokerimg img-circle" src="" alt="">
-                        <div class="brokertext">
-                            <h3 id="huname">发布者姓名</h3>
-                            <span id="huphone">发布者电话</span>
-                        </div>
+                    <div class="form-group">
+                        <label for="InputPassword1">新密码</label>
+                        <input type="password" class="form-control" id="npcupwd" placeholder="新密码">
                     </div>
-                </div>
-                <hr>
-                <div class="panel-bt">
-                    <div class="beizhu">
-                        <p class="lead">备注&#58;</p>
-                        <p id="hbeizhu">aaaaasdjioguorwjsmfioejwiofwmieognrjwomfoeks</p>
+                    <div class="form-group">
+                        <label for="InputPassword1">确认密码</label>
+                        <input type="password" class="form-control" id="npcupwd1" placeholder="确认密码">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="InputFile">头像</label>
+                        <input type="file" id="InputFile">
+                    </div>
+                    <button id="pcbtn" type="submit" class="btn btn-success">更改</button>
+                </form>
+                <img id="nupic" src="" alt="头像">
+            </div>
+            <div class="hr"></div>
+            <div class="panel-bt">
+                <ul class="list-group">
+                    <li id="nlst" class="list-group-item">
+                        无
+                    </li>
+                    <li class="list-group-item">
+                        <img class="pcimglst" src="" alt="图片">
+                        <span class="pchname">小区名</span>
+                        <span class="pchloc">位置</span>
+                        <span class="glyphicon glyphicon-remove pcdel"></span>
+                        <span class="glyphicon glyphicon-pencil pcdel"></span>
+                        <span id="pchid" style="display: none;">house_id</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -113,7 +120,7 @@
     <script src="../js/index.js"></script>
     <script type="text/javascript">
         //用window的onload事件，窗体加载完毕的时候
-        window.onload = house();
+        window.onload = pc();
     </script>
 </body>
 </html>
