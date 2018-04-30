@@ -429,10 +429,12 @@ function getupic(uname) {
 
 // 删除房源
 function delhouse(data) {
+    console.log(data);
     var hli = data.parentNode;
+    console.log(hli);
     var hid = hli.lastChild.innerHTML;
+    console.log(hid);
     datapost("hid=" + hid,"http://123.207.141.123/application/delhouse.php");
-    location.reload();
 }
 
 // 个人中心初始化
@@ -511,6 +513,7 @@ function pc() {
                         span4.onclick = function () {
                             // 删除房屋信息
                             delhouse(this);
+                            location.reload();
                         }
                     }
                 }
