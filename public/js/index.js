@@ -433,6 +433,7 @@ function pc() {
 
 
     // 获取头像
+    console.log(pcupic.src);
     pcupic.src = getupic(pcuname, pcupic.src);
     // 获取已发布房源
 
