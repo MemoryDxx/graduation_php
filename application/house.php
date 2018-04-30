@@ -13,9 +13,9 @@
     $res = $conn->query("SELECT * FROM house WHERE house_id='$hid'");
     $row = mysqli_fetch_assoc($res);
     $name = $row['uname'];
-    // $res1 = $conn->query("SELECT uphone FROM user WHERE uname='$name'");
-    // $row1 = mysqli_fetch_assoc($res1);
-    // $row['uphone'] = $res1['uphone'];
+    $res1 = $conn->query("SELECT uphone FROM user WHERE uname='$name'");
+    $row1 = mysqli_fetch_assoc($res1);
+    $row['uphone'] = $row1['uphone'];
     
     echo json_encode($row);
     // echo json_encode($row1);
