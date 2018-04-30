@@ -400,6 +400,7 @@ nav{
 #pc{
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .pcform{
@@ -415,8 +416,8 @@ nav{
     float: right;
     width: 144px;
     height: 144px;
-    margin-top: 50px;
-    margin-right: 100px;
+    margin-top: 12%;
+    margin-right: 15%;
 }
 
 #pcbtn{

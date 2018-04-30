@@ -505,5 +505,42 @@ function pc() {
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("uname=" + pcuname);
 }
+
+// 更改个人信息
+function changepc() {
+    var olduname = CookieUtil.get("name");
+    var uername = document.getElementById("pcuname").value;
+    var oldpwd = document.getElementById("pcupwd").value;
+    var newpwd = document.getElementById("npupwd").value;
+    var cnewpwd = document.getElementById("npupwd1").value;
+    var touxiang = document.getElementById("InputFile").files[0];
+
+    var formdata = new FormData();
+    formdata.append("olduname",olduname);
+    formdata.append("newuname",username);
+    formdata.append("oldupwd",oldpwd);
+    if(newpwd == cnewpwd){
+        formdata.append("newupwd",newpwd);
+    }else{
+        alert("请确认密码");
+    }
+    formdata.append("pic",touxiang);
+
+    $.ajax({
+        url: 'http://123.207.141.123/application/pcchange.php',
+        type: 'POST',
+        data: formdata,
+        dataType: 'text',
+        cache: false,
+        processData: false,
+        contentType: false,
+        error: function (XMLHttpRequest, ) {
+            
+        },
+        success: function (data) {
+            console.log(data);
+        }
+    });
+}
 // 背景，所做工作，展望，总结，存在的不足
 // 摘要：第一章到最后一章的压缩
