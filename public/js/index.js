@@ -427,6 +427,14 @@ function getupic(uname) {
     xhr.send("uname=" + uname);
 }
 
+// 删除房源
+function delhouse(data) {
+    var hli = data.parentNode;
+    var hid = hli.lastChild.innerHTML;
+    datapost("hid=" + hid,"http://123.207.141.123/application/delhouse.php");
+    location.reload();
+}
+
 // 个人中心初始化
 function pc() {
     var pcuname = CookieUtil.get("name");
@@ -496,6 +504,14 @@ function pc() {
                         hli.appendChild(span4);
                         hli.appendChild(span5);
                         houseul.appendChild(hli);
+                        span3.onclick = function () {
+                            // 修改房屋信息
+                            
+                        }
+                        span4.onclick = function () {
+                            // 删除房屋信息
+                            delhouse(this);
+                        }
                     }
                 }
             }
