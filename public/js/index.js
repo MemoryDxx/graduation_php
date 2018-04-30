@@ -517,7 +517,7 @@ function changepc() {
 
     var formdata = new FormData();
     formdata.append("olduname",olduname);
-    formdata.append("newuname",username);
+    formdata.append("newuname",uername);
     formdata.append("oldupwd",oldpwd);
     if(newpwd == cnewpwd){
         formdata.append("newupwd",newpwd);
