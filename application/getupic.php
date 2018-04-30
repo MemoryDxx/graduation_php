@@ -16,7 +16,7 @@
     $res1 = $conn->query("SELECT * FROM house WHERE uname='$name'");
     $row1 = mysqli_fetch_assoc($res1);
 
-    echo $res1;
+    echo json_encode($res1);
     // echo $row['upic'];
 
     $conn->close();
