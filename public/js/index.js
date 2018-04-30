@@ -419,7 +419,7 @@ function getupic(uname, upic) {
     };
     xhr.open("post","http://123.207.141.123/application/getupic.php",true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xhr.send(uname);
+    xhr.send("uname=" + uname);
 }
 
 // 个人中心初始化
