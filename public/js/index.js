@@ -433,7 +433,7 @@ function pc() {
     pcuname.value = CookieUtil.get("name");
 
     // 获取头像
-    pcupic.src = getupic(pcuname, pcupic.src);
+    pcupic.src = getupic(pcuname.value, pcupic.src);
     // 获取已发布房源
 
 }
