@@ -441,8 +441,9 @@ function pc() {
                 console.log(data);
                 console.log(data[2]);
                 console.log(data[2].house_name);
+                console.log(data.length);
                 console.log(data.upic);
-                pcupic.src = xhr.responseText;
+                pcupic.src = data.upic;
                 console.log(pcupic.src);
                 var reg = "public/";
                 var src1 = pcupic.src.replace(new RegExp(reg),"");
