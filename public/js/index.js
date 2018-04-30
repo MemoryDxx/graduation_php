@@ -427,6 +427,54 @@ function getupic(uname) {
     xhr.send("uname=" + uname);
 }
 
+// 修改房源信息
+function editHouse(data) {
+    var hli = data.parentNode;
+    var hid = hli.lastChild.innerHTML;
+    window.location.href = "http://123.207.141.123/public/pages/edit.html?hid=" + hid;
+}
+
+function edi() {
+    var xqm = document.getElementById("relname").value; //小区名
+    var hx = document.getElementById("reltype").value;  //户型
+    var mj = document.getElementById("relarea").value;  //面积
+    var lc = document.getElementById("relfloor").value; //楼层
+    var cx = document.getElementById("relori").value;   //朝向
+    var wz = document.getElementById("relloc").value;   //楼栋号
+    var jg = document.getElementById("relpri").value;   //价格
+    var person = CookieUtil.get("name");    //发布者用户名
+    var bz = document.getElementById("relbei").value;   //备注
+
+    var formdata = new FormData();
+    formdata.append("relname",xqm);
+    formdata.append("reltype",hx);
+    formdata.append("relarea",mj);
+    formdata.append("relfloor",lc);
+    formdata.append("relori",cx);
+    formdata.append("relloc",wz);
+    formdata.append("relpri",jg);
+    formdata.append("relperson",person);
+    formdata.append("relbei",bz);
+
+    $.ajax({
+        url: 'http://123.207.141.123/application/realse.php',
+        type: 'POST',
+        data: formdata,
+        dataType: 'text',
+        cache: false,
+        processData: false,
+        contentType: false,
+        error: function (XMLHttpRequest, ) {
+            
+        },
+        success: function (data) {
+            console.log(data);
+            var hid = data;
+            window.location.href = "http://123.207.141.123/public/pages/pc.html";
+        }
+    });
+}
+
 // 删除房源
 function delhouse(data) {
     console.log(data);
@@ -506,11 +554,12 @@ function pc() {
                         hli.appendChild(span4);
                         hli.appendChild(span5);
                         houseul.appendChild(hli);
-                        span3.onclick = function () {
-                            // 修改房屋信息
-                            
-                        }
                         span4.onclick = function () {
+                            // 修改房屋信息
+                            editHouse(this);
+                            location.reload();
+                        }
+                        span3.onclick = function () {
                             // 删除房屋信息
                             delhouse(this);
                             location.reload();

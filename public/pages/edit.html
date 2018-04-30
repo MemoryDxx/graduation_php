@@ -105,13 +105,6 @@
                         <input type="text" class="form-control" id="relpri" placeholder="价格">
                     </div>
                 </div>
-                <!-- 上传照片 -->
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-3 control-label popup-label">图片</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="relpic" placeholder="">
-                    </div>
-                </div>
                 <!-- 备注 -->
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-3 control-label popup-label">备注</label>
@@ -119,7 +112,7 @@
                         <textarea name="" id="relbei" cols="52" rows="5"></textarea>
                     </div>
                 </div>
-                <button type="button" class="btn btn-default text-center submit-btn" onclick="rel();">发布</button>
+                <button type="button" class="btn btn-default text-center submit-btn" onclick="edi();">发布</button>
             </form>
         </div>
     </div>
@@ -137,7 +130,45 @@
         //用window的onload事件，窗体加载完毕的时候
         window.onload = function () {
             checkCookie();
+            var h_idurl = location.search;
+            if(h_idurl.indexOf("?")!=-1){
+                var editname = document.getElementById("relname");
+                var edittype = document.getElementById("reltype");
+                var editarea = document.getElementById("relarea");
+                var editfloor = document.getElementById("relfloor");
+                var editori = document.getElementById("relori");
+                var editloc = document.getElementById("relloc");
+                var editpri = document.getElementById("relpri");
+                var editbz = document.getElementById("relbei");
+
+                var str = h_idurl.substr(1);
+                var strs = str.split("=");
+                var h_id = strs[1];
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    // readystate为4，请求已完成
+                    if (xhr.readyState ==4) {
+                        if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                            // 解析请求返回的JSON数据
+                            var data = JSON.parse(xhr.responseText);
+                            console.log(xhr.responseText);
+                            editname.value = data.house_name;
+                            edittype.value = data.house_type;
+                            editarea.value = data.house_area;
+                            editfloor.value = data.house_floor;
+                            editori.value = data.house_ori;
+                            editloc.value = data.house_loc;
+                            editpri.value = data.house_pri;
+                            editbz.value = data.beizhu;
+                        }
+                    }
+                };
+                xhr.open("post","http://123.207.141.123/application/edit.php",true);
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.send("hid="+h_id);
             }
+        }
     </script>
 </body>
 </html>
