@@ -409,10 +409,11 @@ function getupic(uname, upic) {
                 // 解析请求返回的JSON数据
                 var data = JSON.parse(xhr.responseText);
                 console.log(data);
-                upic.src = data.upic.substr(17);
+                upic = data.upic.substr(17);
                 var reg = "pages";
                 var src1 = upic.src.replace(new RegExp(reg),"photos/upic");
-                upic.src = src1;
+                upic = src1;
+                return upic;
             }
         }
     };
@@ -432,7 +433,7 @@ function pc() {
     pcuname.value = CookieUtil.get("name");
 
     // 获取头像
-    getupic(pcuname, pcupic);
+    pcupic.src = getupic(pcuname, pcupic.src);
     // 获取已发布房源
 
 }
