@@ -458,7 +458,43 @@ function pc() {
                 var src1 = pcupic.src.replace(new RegExp(reg),"");
                 pcupic.src = src1;
                 // 房源
-
+                var houseul = document.getElementById("hul");
+                var housenull = document.getElementById("nlst");
+                if (getJsonLen(data > 0)) {
+                    housenull.style.display = "none";
+                    for(var i = 0;i <= getJsonLen(data);i++){
+                        // 创建元素
+                        var hli = document.createElement("li");
+                        var himg = document.createElement("img");
+                        var span1 = document.createElement("span");
+                        var span2 = document.createElement("span");
+                        var span3 = document.createElement("span");
+                        var span4 = document.createElement("span");
+                        var span5 = document.createElement("span");
+                        // 设置新元素的基本属性
+                        hli.className = "list-group-item";
+                        himg.className = "pcimglst";
+                        span1.className = "pchname";
+                        span2.className = "pchloc";
+                        span3.className = "glyphicon glyphicon-remove pcdel";
+                        span4.className = "glyphicon glyphicon-pencil pcdel";
+                        span5.id = "pchid";
+                        span5.style.display = "none";
+                        // 填入值
+                        himg.src = data[i].house_pic;
+                        span1.innerHTML = data[i].house_name;
+                        span2.innerHTML = data[i].house_loc;
+                        span5.innerHTML = data[i].house_id;
+                        // 建立节点间父子关系
+                        hli.appendChild(himg);
+                        hli.appendChild(span1);
+                        hli.appendChild(span2);
+                        hli.appendChild(span3);
+                        hli.appendChild(span4);
+                        hli.appendChild(span5);
+                        houseul.appendChild(hli);
+                    }
+                }
             }
         }
     };
