@@ -429,6 +429,10 @@ function pc() {
     // 获取头像
     console.log(pcupic.src);
     pcupic.src = getupic(pcuname);
+    console.log(pcupic.src);
+    var reg = "pages";
+    var src1 = pcupic.src.replace(new RegExp(reg),"photos/upic");
+    pcupic.src = src1;
     // 获取已发布房源
 
 }
