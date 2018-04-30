@@ -30,13 +30,14 @@
         echo $_FILES['relpic']['name']."exist";
     }else{
         move_uploaded_file($_FILES['relpic']['tmp_name'],"../public/photos/".$_FILES['relpic']['name']);
-        echo "success";
         mysqli_query("set names 'utf8'");
         if ($conn->query("INSERT INTO house (house_name, house_type, house_area, house_floor, house_ori, house_loc, house_pri, house_pic, uname, beizhu)
         VALUES
         ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath','$rperson','$rbei')")) {
             # code...
-            echo "insert success";
+            $res = $conn->query("SELECT * FROM house LIMIT 1");
+            $row=mysqli_fetch_assoc($res);
+            echo $row['house_id'];
         }else{
             echo "error: " . $sql . "<br>" . $conn->error;
         }

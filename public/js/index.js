@@ -317,9 +317,8 @@ function rel() {
         },
         success: function (data) {
             console.log(data);
-            if (data === 'success') {
-                window.location.href = "http://123.207.141.123/public/house.html?hid=" + hid;
-            }
+            var hid = data;
+            window.location.href = "http://123.207.141.123/public/house.html?hid=" + hid;
         }
     });
 
