@@ -411,7 +411,7 @@ function getupic(uname, upic) {
                 console.log(xhr.responseText);
                 upic = xhr.responseText.substr(17);
                 var reg = "pages";
-                var src1 = upic.src.replace(new RegExp(reg),"photos/upic");
+                var src1 = upic.replace(new RegExp(reg),"photos/upic");
                 upic = src1;
                 return upic;
             }

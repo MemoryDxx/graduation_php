@@ -12,7 +12,8 @@
     $name = $_POST['uname'];
     $res = $conn->query("SELECT upic FROM user WHERE uname='$name'");
     $row = mysqli_fetch_assoc($res);
-    echo ($row['upic']);
+    $pic = $row['upic'];
+    echo $pic;
 
     $conn->close();
 ?>
