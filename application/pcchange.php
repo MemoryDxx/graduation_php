@@ -18,7 +18,7 @@
     $picpath = '../public/photos/upic/'.$_FILES['pic']['name'];
     var_dump($olduname);
     var_dump($newuname);
-    
+
 
     if($oldpwd){
         $res = $conn->query("SELECT upwd FROM user WHERE uname='$olduname'");
@@ -33,7 +33,7 @@
     }
     
     $res1 = $conn->query("SELECT uid FROM user WHERE uname='$olduname'");
-    $row1 = mysqli_fetch_assoc($res);
+    $row1 = mysqli_fetch_assoc($res1);
     $userid = $row1['uid'];
     $conn->query("UPDATE user SET uname='$newuname' WHERE uid='$userid'");
 
