@@ -29,9 +29,9 @@
         }
     }
     
-    // $res = $conn->query("SELECT uid FROM user WHERE uname='$olduname'");
-    // $row = mysqli_fetch_assoc($res);
-    $userid = mysqli_fetch_assoc($conn->query("SELECT uid FROM user WHERE uname='$olduname'"));
+    $res1 = $conn->query("SELECT uid FROM user WHERE uname='$olduname'");
+    $row1 = mysqli_fetch_assoc($res);
+    $userid = $row1['uid'];
     $conn->query("UPDATE user SET uname='$newuname' WHERE uid='$userid'");
 
     // 上传头像
