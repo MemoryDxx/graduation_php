@@ -439,6 +439,8 @@ function pc() {
                 var data = JSON.parse(xhr.responseText);
                 // 头像
                 console.log(data);
+                console.log(data[2]);
+                console.log(data[2].house_name);
                 pcupic.src = xhr.responseText;
                 console.log(pcupic.src);
                 var reg = "public/";
