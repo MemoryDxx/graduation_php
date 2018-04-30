@@ -445,8 +445,8 @@ function pc() {
                 console.log(xhr.responseText);
                 pcupic.src = xhr.responseText;
                 console.log(pcupic.src);
-                var reg = "pages";
-                var src1 = pcupic.src.replace(new RegExp(reg),"photos/upic");
+                var reg = "public/";
+                var src1 = pcupic.src.replace(new RegExp(reg),"");
                 pcupic.src = src1;
             }
         }
