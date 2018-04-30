@@ -15,7 +15,10 @@
     $name = $row['uname'];
     $res1 = $conn->query("SELECT uphone FROM user WHERE uname='$name'");
     $row1 = mysqli_fetch_assoc($res1);
+    $res2 = $conn->query("SELECT upic FROM user WHERE uname='$name'");
+    $row2 = mysqli_fetch_assoc($res2);
     $row['uphone'] = $row1['uphone'];
+    $row['upic'] = $row2['upic'];
     
     echo json_encode($row);
     // echo json_encode($row1);

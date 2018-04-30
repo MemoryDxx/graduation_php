@@ -349,6 +349,7 @@ function house() {
     var loc = document.getElementById("hloc");  //楼栋号
     var uer = document.getElementById("huname");//发布者姓名
     var uerphone = document.getElementById("huphone");  //发布者电话
+    var uerpic = document.getElementById("upic");   //发布者头像
     var bz = document.getElementById("hbeizhu");    //备注
 
     var h_idurl = location.search;
@@ -370,9 +371,12 @@ function house() {
                     console.log(data);
                     ttl.innerHTML = data.house_name;
                     pic.src = data.house_pic.substr(17);
+                    uerpic.src = data.upic.substr(17);
                     var reg = "pages";
                     var src = pic.src.replace(new RegExp(reg),"photos");
+                    var src1 = uerpic.src.replace(new RegExp(reg),"photos");
                     pic.src = src;
+                    uerpic.src = src1;
                     console.log(src);
                     console.log(data.house_pic);
                     console.log(pic.src);
