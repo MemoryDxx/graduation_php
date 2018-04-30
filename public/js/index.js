@@ -482,6 +482,9 @@ function pc() {
                         span5.style.display = "none";
                         // 填入值
                         himg.src = data[i].house_pic;
+                        var reg = "public/";
+                        var src1 = himg.src.replace(new RegExp(reg),"");
+                        himg.src = src1;
                         span1.innerHTML = data[i].house_name;
                         span2.innerHTML = data[i].house_loc;
                         span5.innerHTML = data[i].house_id;

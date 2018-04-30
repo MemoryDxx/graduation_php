@@ -392,6 +392,11 @@ nav{
 }
 
 /* pc.html */
+.pc_bd{
+    width: 80%;
+    margin: 0 auto;
+}
+
 #pc{
     width: 80%;
     margin: 0 auto;
