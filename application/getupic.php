@@ -12,8 +12,11 @@
     $name = $_POST['uname'];
     $res = $conn->query("SELECT upic FROM user WHERE uname='$name'");
     $row = mysqli_fetch_assoc($res);
-    $pic = $row['upic'];
-    echo $row['upic'];
+
+    $res1 = $conn->query("SELECT * FROM house WHERE uname='$name'");
+    $row1 = mysqli_fetch_assoc($res1);
+
+    echo $row1;
 
     $conn->close();
 ?>

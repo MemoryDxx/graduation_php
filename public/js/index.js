@@ -421,20 +421,15 @@ function getupic(uname) {
 // 个人中心初始化
 function pc() {
     var pcuname = CookieUtil.get("name");
+    var pcunameinput = document.getElementById("pcuname");
+    pcunameinput.value = pcuname;
     var pcupic = document.getElementById("nupic");
     var pcupwd = document.getElementById("pcupwd").value;
     var npcupwd = document.getElementById("npcupwd").value;
     var npcupwd1 = document.getElementById("npcupwd1").value;
 
 
-    // 获取头像
-    // console.log(pcupic.src);
-    // pcupic.src = getupic(pcuname);
-    // console.log(pcupic.src);
-    // var reg = "pages";
-    // var src1 = pcupic.src.replace(new RegExp(reg),"photos/upic");
-    // pcupic.src = src1;
-
+    // 获取头像及已发布房源
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         // readystate为4，请求已完成
@@ -442,20 +437,21 @@ function pc() {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 // var data = JSON.parse(xhr.responseText);
+                // 头像
                 console.log(xhr.responseText);
                 pcupic.src = xhr.responseText;
                 console.log(pcupic.src);
                 var reg = "public/";
                 var src1 = pcupic.src.replace(new RegExp(reg),"");
                 pcupic.src = src1;
+                // 房源
+
             }
         }
     };
     xhr.open("post","http://123.207.141.123/application/getupic.php",true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("uname=" + pcuname);
-    // 获取已发布房源
-
 }
 // 背景，所做工作，展望，总结，存在的不足
 // 摘要：第一章到最后一章的压缩
