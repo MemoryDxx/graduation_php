@@ -543,6 +543,7 @@ function changepc() {
             console.log(data);
             CookieUtil.unset("name");
             CookieUtil.set("name",uername);
+            location.reload();
         }
     });
 }
