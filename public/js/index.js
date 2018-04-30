@@ -413,6 +413,7 @@ function getupic(uname, upic) {
                 var reg = "pages";
                 var src1 = upic.replace(new RegExp(reg),"photos/upic");
                 upic = src1;
+                console.log(upic);
                 return upic;
             }
         }
