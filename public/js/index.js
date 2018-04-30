@@ -511,8 +511,8 @@ function changepc() {
     var olduname = CookieUtil.get("name");
     var uername = document.getElementById("pcuname").value;
     var oldpwd = document.getElementById("pcupwd").value;
-    var newpwd = document.getElementById("npupwd").value;
-    var cnewpwd = document.getElementById("npupwd1").value;
+    var newpwd = document.getElementById("npcupwd").value;
+    var cnewpwd = document.getElementById("npcupwd1").value;
     var touxiang = document.getElementById("InputFile").files[0];
 
     var formdata = new FormData();
