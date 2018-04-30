@@ -453,7 +453,7 @@ function pc() {
     };
     xhr.open("post","http://123.207.141.123/application/getupic.php",true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xhr.send("uname=" + uname);
+    xhr.send("uname=" + pcuname);
     // 获取已发布房源
 
 }
