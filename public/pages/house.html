@@ -46,7 +46,7 @@
                             <span class="sr-only">切换下拉菜单</span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">功能</a></li>
+                            <li><a href="#">注销</a></li>
                             <li><a href="#">另一个功能</a></li>
                             <li><a href="#">其他</a></li>
                             <li class="divider"></li>
@@ -63,31 +63,31 @@
         <div class="panel panel-default">
             <!-- 房屋详情标题 -->
             <div class="panel-heading house_ttl">
-                <span>标题</span> 
+                <span id="httl">标题</span> 
             </div>
             <!-- 房屋详情内容 -->
             <div class="panel-body">
                 <div class="panel-lf">
-                    <img src="" alt="">
+                    <img id="picid" src="" alt="">
                 </div>
                 <div class="panel-rt">
                     <div class="house-pri">
-                        <span class="total">价格</span>
+                        <span id="hpri" class="total">价格</span>
                         元/月
                     </div>
                     <div class="house-zf">
-                        <p class="zf-lf">面积&#58;</p>
-                        <p class="zf-lf">户型&#58;</p>
-                        <p class="zf-lf">朝向&#58;</p>
-                        <p class="zf-lf">楼层&#58;</p>
-                        <p>小区&#58;</p>
-                        <p>位置&#58;</p>
+                        <p id="harea" class="zf-lf">面积&#58;</p>
+                        <p id="htype" class="zf-lf">户型&#58;</p>
+                        <p id="hori" class="zf-lf">朝向&#58;</p>
+                        <p id="hfloor" class="zf-lf">楼层&#58;</p>
+                        <p id="hname">小区&#58;</p>
+                        <p id="hloc">位置&#58;</p>
                     </div>
                     <div class="brokerinfo">
                         <img class="brokerimg img-circle" src="" alt="">
                         <div class="brokertext">
-                            <h3>发布者姓名</h3>
-                            <span>发布者电话</span>
+                            <h3 id="huname">发布者姓名</h3>
+                            <span id="huphone">发布者电话</span>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                 <div class="panel-bt">
                     <div class="beizhu">
                         <p class="lead">备注&#58;</p>
-                        <p>aaaaasdjioguorwjsmfioejwiofwmieognrjwomfoeks</p>
+                        <p id="hbeizhu">aaaaasdjioguorwjsmfioejwiofwmieognrjwomfoeks</p>
                     </div>
                 </div>
             </div>
@@ -110,6 +110,10 @@
         </footer>
     </div>
 
-    <script src="./public/js/index.js"></script>
+    <script src="../js/index.js"></script>
+    <script type="text/javascript">
+        //用window的onload事件，窗体加载完毕的时候
+        window.onload = house();
+    </script>
 </body>
 </html>

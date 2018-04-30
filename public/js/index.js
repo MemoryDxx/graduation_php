@@ -321,37 +321,6 @@ function rel() {
             window.location.href = "http://123.207.141.123/public/pages/house.html?hid=" + hid;
         }
     });
-
-    // console.log(data.get("relname"));
-    // console.log(data.get("reltype"));
-    // console.log(data.get("relarea"));
-    // console.log(data.get("relfloor"));
-    // console.log(data.get("relori"));
-    // console.log(data.get("relloc"));
-    // console.log(data.get("relpri"));
-    // // console.log(data.get("relpic"));
-    // for(var val of data.values()){
-    //     console.log(val);
-    // }
-    // var data1 = JSON.stringify(data);
-    // console.log(data1);
-
-
-    // datapost("relhouse=" + data,"http://123.207.141.123/application/realse.php");
-    // var xhr = new XMLHttpRequest();
-    // xhr.onreadystatechange = function () {
-    //     // readystate为4，请求已完成
-    //     if (xhr.readyState ==4) {
-    //         if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-    //             // 解析请求返回的JSON数据
-    //             //var data = JSON.parse(xhr.responseText);
-    //             console.log(xhr.responseText);
-    //         }
-    //     }
-    // };
-    // xhr.open("post","http://123.207.141.123/application/realse.php",true);
-    // xhr.setRequestHeader("Content-Type","multipart/form-data");
-    // xhr.send("relhouse=" + data);
 }
 
 // 获取首页房屋列表
@@ -360,6 +329,53 @@ function getlst() {
     
 }
 
+// 房子详情页面
+function house() {
+    if (CookieUtil.get("name") !== null) {
+        var pcen = document.getElementById("pcenter");
+        var btn = document.getElementById("lrbtn");
+        btn.style.display = "none";
+        pcen.style.display = "block";
+    }
+
+    var ttl = document.getElementById("httl");  //标题
+    var pic = document.getElementById("picid"); //图片
+    var pri = document.getElementById("hpri");  //价格
+    var area = document.getElementById("harea");    //面积
+    var tp = document.getElementById("htype");  //户型
+    var ori = document.getElementById("hori");  //朝向
+    var fl = document.getElementById("hfloor"); //楼层
+    var xq = document.getElementById("hname");  //小区
+    var loc = document.getElementById("hloc");  //楼栋号
+    var uer = document.getElementById("huname");//发布者姓名
+    var uerphone = document.getElementById("huphone");  //发布者电话
+    var bz = document.getElementById("hbeizhu");    //备注
+
+    var h_idurl = location.search;
+    var res = new Object();
+    //如果?位置不为-1
+    if(h_idurl.indexOf("?")!=-1){
+        //记录从1开始到结束的字符串
+        var str = h_idurl.substr(1);
+        var strs = str.split("=");
+        var h_id = strs[1];
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            // readystate为4，请求已完成
+            if (xhr.readyState ==4) {
+                if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                    // 解析请求返回的JSON数据
+                    var data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                }
+            }
+        };
+        xhr.open("post","http://123.207.141.123/application/house.php",true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send("hid=" + h_id);
+    }
+}
 
 // 背景，所做工作，展望，总结，存在的不足
 // 摘要：第一章到最后一章的压缩
