@@ -518,7 +518,7 @@ function pc() {
                 // 房源
                 var houseul = document.getElementById("hul");
                 var housenull = document.getElementById("nlst");
-                if (getJsonLen(data > 0)) {
+                if (getJsonLen(getJsonLen(data) > 0)) {
                     housenull.style.display = "none";
                     for(var i = 0;i < getJsonLen(data);i++){
                         // 创建元素
