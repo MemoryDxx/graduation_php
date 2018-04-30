@@ -369,7 +369,7 @@ function house() {
                     var data = JSON.parse(xhr.responseText);
                     console.log(data);
                     ttl.innerHTML = data.house_name;
-                    pic.src = data.house_pic.substr(7);
+                    pic.src = data.house_pic.substr(10);
                     console.log(data.house_pic);
                     console.log(pic.src);
                     pri.innerHTML = data.house_pri;
