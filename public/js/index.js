@@ -428,12 +428,32 @@ function pc() {
 
 
     // 获取头像
-    console.log(pcupic.src);
-    pcupic.src = getupic(pcuname);
-    console.log(pcupic.src);
-    var reg = "pages";
-    var src1 = pcupic.src.replace(new RegExp(reg),"photos/upic");
-    pcupic.src = src1;
+    // console.log(pcupic.src);
+    // pcupic.src = getupic(pcuname);
+    // console.log(pcupic.src);
+    // var reg = "pages";
+    // var src1 = pcupic.src.replace(new RegExp(reg),"photos/upic");
+    // pcupic.src = src1;
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                // var data = JSON.parse(xhr.responseText);
+                console.log(xhr.responseText);
+                pcupic.src = xhr.responseText;
+                console.log(pcupic.src);
+                var reg = "pages";
+                var src1 = pcupic.src.replace(new RegExp(reg),"photos/upic");
+                pcupic.src = src1;
+            }
+        }
+    };
+    xhr.open("post","http://123.207.141.123/application/getupic.php",true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("uname=" + uname);
     // 获取已发布房源
 
 }
