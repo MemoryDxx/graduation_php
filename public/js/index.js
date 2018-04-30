@@ -370,6 +370,8 @@ function house() {
                     console.log(data);
                     ttl.innerHTML = data.house_name;
                     pic.src = data.house_pic.substr(7);
+                    console.log(data.house_pic);
+                    console.log(pic.src);
                     pri.innerHTML = data.house_pri;
                     area.innerHTML += data.house_area;
                     tp.innerHTML += data.house_type;
