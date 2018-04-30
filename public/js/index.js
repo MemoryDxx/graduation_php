@@ -407,7 +407,7 @@ function getupic(uname, upic) {
         if (xhr.readyState ==4) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
-                var data = JSON.parse(xhr.responseText);
+                // var data = JSON.parse(xhr.responseText);
                 console.log(data);
                 upic = data.upic.substr(17);
                 var reg = "pages";
