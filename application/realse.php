@@ -35,7 +35,7 @@
         VALUES
         ('$rname','$rtype','$rarea','$rfloor','$rori','$rloc','$rpri','$picpath','$rperson','$rbei')")) {
             # code...
-            $res = $conn->query("SELECT * FROM house LIMIT 1");
+            $res = $conn->query("SELECT * FROM house order by house_id desc LIMIT 1");
             $row=mysqli_fetch_assoc($res);
             echo $row['house_id'];
         }else{
