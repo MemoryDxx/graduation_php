@@ -416,9 +416,9 @@ function getupic(uname, upic) {
             }
         }
     };
-    xhr.open("post",url,true);
+    xhr.open("post","http://123.207.141.123/application/getupic.php",true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xhr.send(data);
+    xhr.send(uname);
 }
 
 // 个人中心初始化
@@ -434,7 +434,7 @@ function pc() {
     // 获取头像
     getupic(pcuname, pcupic);
     // 获取已发布房源
-    
+
 }
 // 背景，所做工作，展望，总结，存在的不足
 // 摘要：第一章到最后一章的压缩
