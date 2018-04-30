@@ -424,16 +424,15 @@ function getupic(uname, upic) {
 
 // 个人中心初始化
 function pc() {
-    var pcuname = document.getElementById("pcuname");
+    var pcuname = CookieUtil.get("name");
     var pcupic = document.getElementById("nupic");
     var pcupwd = document.getElementById("pcupwd").value;
     var npcupwd = document.getElementById("npcupwd").value;
     var npcupwd1 = document.getElementById("npcupwd1").value;
 
-    pcuname.value = CookieUtil.get("name");
 
     // 获取头像
-    pcupic.src = getupic(pcuname.value, pcupic.src);
+    pcupic.src = getupic(pcuname, pcupic.src);
     // 获取已发布房源
 
 }
