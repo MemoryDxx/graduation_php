@@ -370,7 +370,8 @@ function house() {
                     console.log(data);
                     ttl.innerHTML = data.house_name;
                     pic.src = data.house_pic.substr(17);
-                    var src = "/public/photos/" + pic.src;
+                    var reg = "pages";
+                    var src = pic.src.replace(new RegExp(reg),"photos");
                     console.log(src);
                     console.log(data.house_pic);
                     console.log(pic.src);
