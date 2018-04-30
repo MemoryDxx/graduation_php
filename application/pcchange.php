@@ -16,6 +16,9 @@
     $imgname = $_FILES['pic']['name'];
     $imgtmp = $_FILES['pic']['tmp_name'];
     $picpath = '../public/photos/upic/'.$_FILES['pic']['name'];
+    var_dump($olduname);
+    var_dump($newuname);
+    
 
     if($oldpwd){
         $res = $conn->query("SELECT upwd FROM user WHERE uname='$olduname'");
