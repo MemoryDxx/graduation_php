@@ -369,9 +369,10 @@ function house() {
                     var data = JSON.parse(xhr.responseText);
                     console.log(data);
                     ttl.innerHTML = data.house_name;
-                    pic.src = data.house_pic.substr(17);
+                    var src1 = data.house_pic.substr(17);
                     var reg = "pages";
-                    var src = pic.src.replace(new RegExp(reg),"photos");
+                    var src = src1.replace(new RegExp(reg),"photos");
+                    pic.src = src;
                     console.log(src);
                     console.log(data.house_pic);
                     console.log(pic.src);
