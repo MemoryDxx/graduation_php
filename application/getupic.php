@@ -12,7 +12,7 @@
     $name = $_POST['uname'];
     $res = $conn->query("SELECT upic FROM user WHERE uname='$name'");
     $row = mysqli_fetch_assoc($res);
-    echo json_encode($row);
+    echo ($row['upic']);
 
     $conn->close();
 ?>
