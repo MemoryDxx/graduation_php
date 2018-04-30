@@ -462,7 +462,7 @@ function pc() {
                 var housenull = document.getElementById("nlst");
                 if (getJsonLen(data > 0)) {
                     housenull.style.display = "none";
-                    for(var i = 0;i <= getJsonLen(data);i++){
+                    for(var i = 0;i < getJsonLen(data);i++){
                         // 创建元素
                         var hli = document.createElement("li");
                         var himg = document.createElement("img");
