@@ -527,7 +527,7 @@ function pc() {
                         var span1 = document.createElement("span");
                         var span2 = document.createElement("span");
                         var span3 = document.createElement("span");
-                        var span4 = document.createElement("span");
+                        // var span4 = document.createElement("span");
                         var span5 = document.createElement("span");
                         // 设置新元素的基本属性
                         hli.className = "list-group-item";
@@ -535,7 +535,7 @@ function pc() {
                         span1.className = "pchname";
                         span2.className = "pchloc";
                         span3.className = "glyphicon glyphicon-remove pcdel";
-                        span4.className = "glyphicon glyphicon-pencil pcdel";
+                        // span4.className = "glyphicon glyphicon-pencil pcdel";
                         span5.id = "pchid";
                         span5.style.display = "none";
                         // 填入值
@@ -551,14 +551,14 @@ function pc() {
                         hli.appendChild(span1);
                         hli.appendChild(span2);
                         hli.appendChild(span3);
-                        hli.appendChild(span4);
+                        // hli.appendChild(span4);
                         hli.appendChild(span5);
                         houseul.appendChild(hli);
-                        span4.onclick = function () {
-                            // 修改房屋信息
-                            editHouse(this);
-                            location.reload();
-                        }
+                        // span4.onclick = function () {
+                        //     // 修改房屋信息
+                        //     editHouse(this);
+                        //     location.reload();
+                        // }
                         span3.onclick = function () {
                             // 删除房屋信息
                             delhouse(this);
