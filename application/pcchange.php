@@ -25,12 +25,12 @@
         $row=mysqli_fetch_assoc($res);
         if ($row["upwd"] === $oldpwd) {
             # code...
-            $conn->query("UPDATE user SET upwd='$newpwd' WHERE uname='$uname'");
+            $conn->query("UPDATE user SET upwd='$newpwd' WHERE uname='$olduname'");
         }
     }
     
-    $res = $conn->query("SELECT uid FROM user WHERE uname='$olduname'");
-    $row = mysqli_fetch_assoc($res);
+    // $res = $conn->query("SELECT uid FROM user WHERE uname='$olduname'");
+    // $row = mysqli_fetch_assoc($res);
     $userid = mysqli_fetch_assoc($conn->query("SELECT uid FROM user WHERE uname='$olduname'"));
     $conn->query("UPDATE user SET uname='$newuname' WHERE uid='$userid'");
 
