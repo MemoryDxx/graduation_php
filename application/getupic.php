@@ -20,7 +20,7 @@
         # code...
         $result[] = $row1;
     }
-    echo $result;
+    echo json_encode($result);
     // echo $row['upic'];
 
     $conn->close();
