@@ -400,7 +400,7 @@ function house() {
 }
 
 // 获取头像
-function getupic(uname, upic) {
+function getupic(uname) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         // readystate为4，请求已完成
@@ -408,14 +408,7 @@ function getupic(uname, upic) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 // var data = JSON.parse(xhr.responseText);
-                upic = "";
-                upic = xhr.responseText;
-                console.log(upic);
-                var reg = "pages";
-                var src1 = upic.replace(new RegExp(reg),"photos/upic");
-                upic = src1;
-                console.log(upic);
-                return upic;
+                return xhr.responseText;
             }
         }
     };
@@ -435,7 +428,7 @@ function pc() {
 
     // 获取头像
     console.log(pcupic.src);
-    pcupic.src = getupic(pcuname, pcupic.src);
+    pcupic.src = getupic(pcuname);
     // 获取已发布房源
 
 }
