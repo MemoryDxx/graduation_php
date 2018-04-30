@@ -13,6 +13,8 @@
     $res = $conn->query("SELECT upic FROM user WHERE uname='$name'");
     $row = mysqli_fetch_assoc($res);
     $pic = $row['upic'];
+    var_dump($row);
+    var_dump($row['upic']);
     echo $pic;
 
     $conn->close();
