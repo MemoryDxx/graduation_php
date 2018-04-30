@@ -541,7 +541,7 @@ function changepc() {
         },
         success: function (data) {
             console.log(data);
-            CookieUtil.set("name",uername);
+            CookieUtil.set("name",uername,'/');
         }
     });
 }
