@@ -15,8 +15,9 @@
     $name = $res['uname'];
     $res1 = $conn->query("SELECT uphone FROM user WHERE uname='$name'");
     $row1 = mysqli_fetch_assoc($res1);
-    $row['uphone'] = $row1['uphone'];
+    $row['uphone'] = $res1['uphone'];
     
+    echo $row1['uphone'];
     echo json_encode($row);
 
     $conn->close();
