@@ -470,7 +470,7 @@ function edi() {
         success: function (data) {
             console.log(data);
             var hid = data;
-            window.location.href = "http://123.207.141.123/public/pages/pc.html";
+            window.location.href = "http://123.207.141.123/public/pages/pc.html?hid="+hid;
         }
     });
 }
@@ -518,7 +518,7 @@ function pc() {
                 // 房源
                 var houseul = document.getElementById("hul");
                 var housenull = document.getElementById("nlst");
-                if (getJsonLen(getJsonLen(data) > 0)) {
+                if (getJsonLen(data) > 0) {
                     housenull.style.display = "none";
                     for(var i = 0;i < getJsonLen(data);i++){
                         // 创建元素
