@@ -516,8 +516,10 @@ function changepc() {
     var touxiang = document.getElementById("InputFile").files[0];
 
     var formdata = new FormData();
-    formdata.append("olduname",olduname);
-    formdata.append("newuname",uername);
+    if(olduname !== uername){
+        formdata.append("olduname",olduname);
+        formdata.append("newuname",uername);
+    }
     formdata.append("oldupwd",oldpwd);
     if(newpwd == cnewpwd){
         formdata.append("newupwd",newpwd);
@@ -539,6 +541,7 @@ function changepc() {
         },
         success: function (data) {
             console.log(data);
+            CookieUtil.set("name",uername);
         }
     });
 }
