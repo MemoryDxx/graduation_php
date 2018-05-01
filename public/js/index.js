@@ -342,7 +342,18 @@ function getlst() {
                 // 解析请求返回的JSON数据
                 var data = JSON.parse(xhr.responseText);
                 console.log(data.length);
-                for(var i = 0;i < getJsonLen(data) + 1; i++){
+                var fenyeul = document.getElementById("fenye");
+                var page = Math.ceil(data.length/5);
+                if(page > 1){
+                    for(var j = 0; j < page; j++){
+                        var pageli = document.createElement("li");
+                        var pagelia = document.createElement("a");
+                        a.innerHTML = 2 + j;
+                        pageli.appendChild(pagelia);
+                        fenyeul.insertBefore(pageli, fenyeul.lastChild);
+                    }
+                }
+                for(var i = 0; i < data.length && i < 5; i++){
                     // 创建节点
                     var ul = document.getElementById("lst-ul");
                     var ls = document.createElement("li");
