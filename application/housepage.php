@@ -10,7 +10,7 @@
     }
 
     $start = $_POST['start'];
-    $page = json_decode($start);
+    $page = (int)$start;
     $inde = ($page-1)*5;
     $smallest = $biggest-5;
     $res1 = $conn->query("SELECT * FROM house LIMIT '$inde',5");
