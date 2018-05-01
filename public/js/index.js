@@ -371,7 +371,7 @@ function getlst() {
                     infop_span1.className = "locat";
                     infop_span2.className = "huxing";
                     infop_span3.className = "chaoxiang";
-                    div_pri,className = "price";
+                    div_pri.className = "price";
                     pri_span.className = "pri-num";
 
                     picp_img.src = data[i].house_pic;
@@ -394,6 +394,7 @@ function getlst() {
                     div_infop.appendChild(infop_div);
 
                     div_pri.appendChild(pri_span);
+                    div_pri.appendChild("\"元/月\"");
 
                     div_col.appendChild(div_picp);
                     div_col.appendChild(div_infop);
