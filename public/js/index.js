@@ -365,6 +365,7 @@ function getlst() {
                     div_picp.className = "pic-panel";
                     picp_a.className = "house-pic";
                     picp_img.className = "house-img";
+                    picp_img.id = "houseimg";
                     div_infop.className = "info-panel";
                     infop_div.className = "where";
                     infop_span1.className = "locat";
