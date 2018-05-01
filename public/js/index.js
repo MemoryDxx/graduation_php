@@ -397,6 +397,9 @@ function getlst() {
                     div_col.appendChild(div_picp);
                     div_col.appendChild(div_infop);
                     div_col.appendChild(div_pri);
+
+                    ls.appendChild(div_col);
+                    ul.appendChild(ls);
                 }
             }
         }
