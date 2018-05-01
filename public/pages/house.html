@@ -113,7 +113,10 @@
     <script src="../js/index.js"></script>
     <script type="text/javascript">
         //用window的onload事件，窗体加载完毕的时候
-        window.onload = house();
+        window.onload = function () {
+            checkCookie();
+            house();
+        } 
     </script>
 </body>
 </html>

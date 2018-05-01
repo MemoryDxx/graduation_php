@@ -194,7 +194,10 @@
 
     <script src="./public/js/index.js"></script>
     <script>
-        window.onload = getlst();
+        window.onload = function () {
+            getlst();
+            checkCookie();
+        } 
     </script>
 </body>
 </html>
