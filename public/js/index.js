@@ -827,5 +827,14 @@ function changepc() {
         }
     });
 }
-// 背景，所做工作，展望，总结，存在的不足
-// 摘要：第一章到最后一章的压缩
+
+// 注销
+function logout() {
+    CookieUtil.set("name","");
+    var btn = document.getElementById("lrbtn");
+    var pcen = document.getElementById("pcenter");
+    console.log(pcen);
+    btn.style.display = "block";
+    pcen.style.display = "none";
+    window.location.href = "http://123.207.141.123/";
+}
