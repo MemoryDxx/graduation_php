@@ -225,6 +225,11 @@ nav{
     vertical-align: middle;
 }
 
+.house-img{
+    width: 173px;
+    height: 130px;
+}
+
 .info-panel{
     display: inline-block;
     vertical-align: middle;
