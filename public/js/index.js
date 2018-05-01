@@ -413,6 +413,7 @@ function getHouseLst(start) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 var data = JSON.parse(xhr.responseText);
+                console.log(data);
                 createHouseLst(data,data.length);
             }
         }
@@ -440,7 +441,7 @@ function getlst() {
                         var pagelia = document.createElement("a");
                         pagelia.innerHTML = 2 + j;
                         pageli.appendChild(pagelia);
-                        pageli.onclick = jmppage(2 + j);
+                        pageli.onclick = jmppage(this,2 + j);
                         fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
                     getHouseLst(1);
@@ -518,7 +519,7 @@ function getlst() {
 }
 
 // 列表分页跳转
-function jmppage(data) {
+function jmppage(ele,data) {
     var act = document.getElementsByClassName("active");
     act[0].childNodes[0].className = "";
     this.className = "active";
