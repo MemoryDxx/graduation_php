@@ -365,13 +365,13 @@ function getlst() {
                     div_picp.className = "pic-panel";
                     picp_a.className = "house-pic";
                     picp_img.className = "house-img";
-                    div_infop = "info-panel";
-                    infop_div = "where";
-                    infop_span1 = "locat";
-                    infop_span2 = "huxing";
-                    infop_span3 = "chaoxiang";
-                    div_pri = "price";
-                    pri_span = "pri-num";
+                    div_infop.className = "info-panel";
+                    infop_div.className = "where";
+                    infop_span1.className = "locat";
+                    infop_span2.className = "huxing";
+                    infop_span3.className = "chaoxiang";
+                    div_pri,className = "price";
+                    pri_span.className = "pri-num";
 
                     picp_img.src = data[i].house_pic;
                     picp_a.href = "http://123.207.141.123/application/house.html?hid="+data[i].house_id;
