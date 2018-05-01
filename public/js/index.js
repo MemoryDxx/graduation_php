@@ -447,13 +447,22 @@ function getlst() {
                         pagelia.innerHTML = 2 + j;
                         pageli.className = "pageli";
                         pageli.appendChild(pagelia);
-                        pageli.onclick = function () {
+                        // pageli.onclick = function () {
+                        //     var act = document.getElementsByClassName("pageli active");
+                        //     act[0].className = "pageli";
+                        //     this.className = "pageli active";
+                        //     getHouseLst(this.childNodes[0].innerHTML);
+                        // }
+                        fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
+                    }
+                    var pli = document.getElementsByClassName("pageli");
+                    for(k in pli){
+                        pli[k].onclick = function () {
                             var act = document.getElementsByClassName("pageli active");
                             act[0].className = "pageli";
                             this.className = "pageli active";
                             getHouseLst(this.childNodes[0].innerHTML);
                         }
-                        fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
                     getHouseLst(1);
                 }else{
