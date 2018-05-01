@@ -441,7 +441,12 @@ function getlst() {
                         var pagelia = document.createElement("a");
                         pagelia.innerHTML = 2 + j;
                         pageli.appendChild(pagelia);
-                        pageli.addEventListener("click",jmppage(this,2 + j));
+                        pageli.onclick = function () {
+                            var act = document.getElementsByClassName("active");
+                            act[0].childNodes[0].className = "";
+                            this.className = "active";
+                            getHouseLst(2 + j);
+                        }
                         fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
                     getHouseLst(1);
