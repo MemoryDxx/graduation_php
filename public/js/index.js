@@ -341,7 +341,7 @@ function getlst() {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
                 var data = JSON.parse(xhr.responseText);
-                console.log(data);
+                console.log(data.length);
                 for(var i = 0;i < getJsonLen(data) + 1; i++){
                     // 创建节点
                     var ul = document.getElementById("lst-ul");
