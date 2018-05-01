@@ -10,9 +10,10 @@
     }
 
     $start = $_POST['start'];
-    $inde = ($start-1)*5;
+    $page = json_decode($start);
+    $inde = ($page-1)*5;
     $smallest = $biggest-5;
-    $res1 = $conn->query("SELECT * FROM house LIMIT 0,5");
+    $res1 = $conn->query("SELECT * FROM house LIMIT '$inde',5");
     $result = array();
     while ($row1 = mysqli_fetch_assoc($res1)) {
         # code...
