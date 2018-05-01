@@ -441,7 +441,7 @@ function getlst() {
                 var fenyeul = document.getElementById("fenye");
                 var page = Math.ceil(data.length/5);
                 if(page > 1){
-                    for(var j = 0; j < page; j++){
+                    for(var j = 0; j < page - 1; j++){
                         var pageli = document.createElement("li");
                         var pagelia = document.createElement("a");
                         pagelia.innerHTML = 2 + j;
