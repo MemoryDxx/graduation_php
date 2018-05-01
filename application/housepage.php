@@ -11,6 +11,7 @@
 
     $start = $_POST['start'];
     $inde = ($start-1)*5;
+    var_dump($inde);
     $smallest = $biggest-5;
     $res1 = $conn->query("SELECT * FROM house LIMIT '$inde', 5");
     $result = array();
