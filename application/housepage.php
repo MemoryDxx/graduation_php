@@ -21,7 +21,7 @@
         $result[] = $row1;
     }
 
-    echo json_encode();
+    echo json_encode($result);
     // echo $row['upic'];
 
     $conn->close($inde);
