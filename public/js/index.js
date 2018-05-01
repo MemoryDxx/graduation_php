@@ -394,7 +394,7 @@ function getlst() {
                     div_infop.appendChild(infop_div);
 
                     div_pri.appendChild(pri_span);
-                    div_pri.appendChild("\"元/月\"");
+                    div_pri.innerHTML += "\"元/月\"";
 
                     div_col.appendChild(div_picp);
                     div_col.appendChild(div_infop);
