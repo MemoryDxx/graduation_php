@@ -12,9 +12,10 @@
     $start = $_POST['start'];
     $page = $start;
     $inde = ($page-1)*5;
-    if($inde == 0){
-        $res1 = $conn->query("SELECT * FROM house LIMIT {$inde},5");
-    }
+    $res1 = $conn->query("SELECT * FROM house LIMIT {$inde},5");
+    // if($inde == 0){
+    //     $res1 = $conn->query("SELECT * FROM house LIMIT {$inde},5");
+    // }
     $result = array();
     while ($row1 = mysqli_fetch_assoc($res1)) {
         # code...
