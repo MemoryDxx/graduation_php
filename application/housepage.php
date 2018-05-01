@@ -10,7 +10,7 @@
     }
 
     $start = $_POST['start'];
-    $page = (int)$start;
+    $page = $start;
     $inde = ($page-1)*5;
     $smallest = $biggest-5;
     $res1 = $conn->query("SELECT * FROM house LIMIT '$inde',5");
@@ -19,8 +19,8 @@
         # code...
         $result[] = $row1;
     }
-    echo json_encode($result);
+    echo json_encode();
     // echo $row['upic'];
 
-    $conn->close();
+    $conn->close($inde);
 ?>
