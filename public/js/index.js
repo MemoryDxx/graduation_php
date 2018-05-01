@@ -406,6 +406,10 @@ function createHouseLst(data,dataLength) {
 
 // 获取范围内房屋列表
 function getHouseLst(start) {
+    var ele = document.getElementById("lst-ul");
+    while(ele.hasChildNodes()){
+        ele.removeChild(ele.firstChild);
+    }
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         // readystate为4，请求已完成
