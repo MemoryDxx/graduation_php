@@ -441,7 +441,7 @@ function getlst() {
                         var pagelia = document.createElement("a");
                         pagelia.innerHTML = 2 + j;
                         pageli.appendChild(pagelia);
-                        pageli.onclick = jmppage(this,2 + j);
+                        pageli.addEventListener("click",jmppage(this,2 + j));
                         fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
                     getHouseLst(1);
