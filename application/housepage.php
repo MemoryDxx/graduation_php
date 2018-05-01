@@ -12,7 +12,7 @@
     $start = $_POST['start'];
     $page = $start;
     $inde = ($page-1)*5;
-    if($inde == 1){
+    if($inde == 0){
         $res1 = $conn->query("SELECT * FROM house LIMIT 0,5");
     }
     $result = array();
