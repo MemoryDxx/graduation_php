@@ -139,15 +139,21 @@ function swreg() {
 }
 
 // 数据提交
-function datapost(data,url) {
+function datapost(data,url,datatype) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         // readystate为4，请求已完成
         if (xhr.readyState ==4) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
-                //var data = JSON.parse(xhr.responseText);
-                console.log(xhr.responseText);
+                if(datatype == "text"){
+                    return xhr.responseText;
+                }else{
+                    var data = JSON.parse(xhr.responseText);
+                    return data;
+                }
+                
+                
             }
         }
     };
@@ -332,6 +338,90 @@ function rel() {
     });
 }
 
+// 创建房源列表
+function createHouseLst(data,dataLength) {
+    // 创建列表
+    for(var i = 0; i < dataLength; i++){
+        // 创建节点
+        var ul = document.getElementById("lst-ul");
+        var ls = document.createElement("li");
+        var div_col = document.createElement("div");
+        var div_picp = document.createElement("div");
+        var div_infop = document.createElement("div");
+        var picp_a = document.createElement("a");
+        var picp_img = document.createElement("img");
+        var infop_a = document.createElement("a");
+        var infop_h = document.createElement("h2");
+        var infop_div = document.createElement("div");
+        var infop_span1 = document.createElement("span");
+        var infop_span2 = document.createElement("span");
+        var infop_span3 = document.createElement("span");
+        var div_pri = document.createElement("div");
+        var pri_span = document.createElement("span");
+        // 设置节点
+        ls.className = "list-group-item";
+        div_col.className = "col-1";
+        div_picp.className = "pic-panel";
+        picp_a.className = "house-pic";
+        picp_img.className = "house-img";
+        picp_img.id = "houseimg";
+        div_infop.className = "info-panel";
+        infop_div.className = "where";
+        infop_span1.className = "locat";
+        infop_span2.className = "huxing";
+        infop_span3.className = "chaoxiang";
+        div_pri.className = "price";
+        pri_span.className = "pri-num";
+
+        picp_img.src = data[i].house_pic;
+        picp_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
+        infop_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
+        infop_a.innerHTML = data[i].house_name;
+        infop_span1.innerHTML = data[i].house_loc;
+        infop_span2.innerHTML = data[i].house_type;
+        infop_span3.innerHTML = data[i].house_ori;
+        pri_span.innerHTML = data[i].house_pri;
+        // 建立节点结构
+        picp_a.appendChild(picp_img);
+        div_picp.appendChild(picp_a);
+
+        infop_h.appendChild(infop_a);
+        infop_div.appendChild(infop_span1);
+        infop_div.appendChild(infop_span2);
+        infop_div.appendChild(infop_span3);
+        div_infop.appendChild(infop_h);
+        div_infop.appendChild(infop_div);
+
+        div_pri.appendChild(pri_span);
+        div_pri.innerHTML += "\"元/月\"";
+
+        div_col.appendChild(div_picp);
+        div_col.appendChild(div_infop);
+        div_col.appendChild(div_pri);
+
+        ls.appendChild(div_col);
+        ul.appendChild(ls);
+    }
+}
+
+// 获取范围内房屋列表
+function getHouseLst(start) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                var data = JSON.parse(xhr.responseText);
+                createHouseLst(data,data.length);
+            }
+        }
+    };
+    xhr.open("post","http://123.207.141.123/application/housepage.php",true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("start=" + start);
+}
+
 // 获取首页房屋列表
 function getlst() {
     var xhr = new XMLHttpRequest();
@@ -350,77 +440,89 @@ function getlst() {
                         var pagelia = document.createElement("a");
                         pagelia.innerHTML = 2 + j;
                         pageli.appendChild(pagelia);
+                        pageli.onclick = jmppage(2 + j);
                         fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
+                    getHouseLst(0);
+                }else{
+                    getHouseLst(0);
                 }
-                for(var i = 0; i < data.length && i < 5; i++){
-                    // 创建节点
-                    var ul = document.getElementById("lst-ul");
-                    var ls = document.createElement("li");
-                    var div_col = document.createElement("div");
-                    var div_picp = document.createElement("div");
-                    var div_infop = document.createElement("div");
-                    var picp_a = document.createElement("a");
-                    var picp_img = document.createElement("img");
-                    var infop_a = document.createElement("a");
-                    var infop_h = document.createElement("h2");
-                    var infop_div = document.createElement("div");
-                    var infop_span1 = document.createElement("span");
-                    var infop_span2 = document.createElement("span");
-                    var infop_span3 = document.createElement("span");
-                    var div_pri = document.createElement("div");
-                    var pri_span = document.createElement("span");
-                    // 设置节点
-                    ls.className = "list-group-item";
-                    div_col.className = "col-1";
-                    div_picp.className = "pic-panel";
-                    picp_a.className = "house-pic";
-                    picp_img.className = "house-img";
-                    picp_img.id = "houseimg";
-                    div_infop.className = "info-panel";
-                    infop_div.className = "where";
-                    infop_span1.className = "locat";
-                    infop_span2.className = "huxing";
-                    infop_span3.className = "chaoxiang";
-                    div_pri.className = "price";
-                    pri_span.className = "pri-num";
+                // 创建列表
+                // for(var i = 0; i < data.length && i < 5; i++){
+                //     // 创建节点
+                //     var ul = document.getElementById("lst-ul");
+                //     var ls = document.createElement("li");
+                //     var div_col = document.createElement("div");
+                //     var div_picp = document.createElement("div");
+                //     var div_infop = document.createElement("div");
+                //     var picp_a = document.createElement("a");
+                //     var picp_img = document.createElement("img");
+                //     var infop_a = document.createElement("a");
+                //     var infop_h = document.createElement("h2");
+                //     var infop_div = document.createElement("div");
+                //     var infop_span1 = document.createElement("span");
+                //     var infop_span2 = document.createElement("span");
+                //     var infop_span3 = document.createElement("span");
+                //     var div_pri = document.createElement("div");
+                //     var pri_span = document.createElement("span");
+                //     // 设置节点
+                //     ls.className = "list-group-item";
+                //     div_col.className = "col-1";
+                //     div_picp.className = "pic-panel";
+                //     picp_a.className = "house-pic";
+                //     picp_img.className = "house-img";
+                //     picp_img.id = "houseimg";
+                //     div_infop.className = "info-panel";
+                //     infop_div.className = "where";
+                //     infop_span1.className = "locat";
+                //     infop_span2.className = "huxing";
+                //     infop_span3.className = "chaoxiang";
+                //     div_pri.className = "price";
+                //     pri_span.className = "pri-num";
 
-                    picp_img.src = data[i].house_pic;
-                    picp_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
-                    infop_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
-                    infop_a.innerHTML = data[i].house_name;
-                    infop_span1.innerHTML = data[i].house_loc;
-                    infop_span2.innerHTML = data[i].house_type;
-                    infop_span3.innerHTML = data[i].house_ori;
-                    pri_span.innerHTML = data[i].house_pri;
-                    // 建立节点结构
-                    picp_a.appendChild(picp_img);
-                    div_picp.appendChild(picp_a);
+                //     picp_img.src = data[i].house_pic;
+                //     picp_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
+                //     infop_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
+                //     infop_a.innerHTML = data[i].house_name;
+                //     infop_span1.innerHTML = data[i].house_loc;
+                //     infop_span2.innerHTML = data[i].house_type;
+                //     infop_span3.innerHTML = data[i].house_ori;
+                //     pri_span.innerHTML = data[i].house_pri;
+                //     // 建立节点结构
+                //     picp_a.appendChild(picp_img);
+                //     div_picp.appendChild(picp_a);
 
-                    infop_h.appendChild(infop_a);
-                    infop_div.appendChild(infop_span1);
-                    infop_div.appendChild(infop_span2);
-                    infop_div.appendChild(infop_span3);
-                    div_infop.appendChild(infop_h);
-                    div_infop.appendChild(infop_div);
+                //     infop_h.appendChild(infop_a);
+                //     infop_div.appendChild(infop_span1);
+                //     infop_div.appendChild(infop_span2);
+                //     infop_div.appendChild(infop_span3);
+                //     div_infop.appendChild(infop_h);
+                //     div_infop.appendChild(infop_div);
 
-                    div_pri.appendChild(pri_span);
-                    div_pri.innerHTML += "\"元/月\"";
+                //     div_pri.appendChild(pri_span);
+                //     div_pri.innerHTML += "\"元/月\"";
 
-                    div_col.appendChild(div_picp);
-                    div_col.appendChild(div_infop);
-                    div_col.appendChild(div_pri);
+                //     div_col.appendChild(div_picp);
+                //     div_col.appendChild(div_infop);
+                //     div_col.appendChild(div_pri);
 
-                    ls.appendChild(div_col);
-                    ul.appendChild(ls);
-                }
+                //     ls.appendChild(div_col);
+                //     ul.appendChild(ls);
+                // }
             }
         }
     };
     xhr.open("post","http://123.207.141.123/application/houlst.php",true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send();
+}
 
+// 列表分页跳转
+function jmppage(data) {
+    var act = document.getElementsByClassName("active");
+    act.childNodes[0].className = "";
+    this.className = "active";
+    getHouseLst(data);
 }
 
 // 房子详情页面
