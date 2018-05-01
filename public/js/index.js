@@ -445,7 +445,7 @@ function getlst() {
                             var act = document.getElementsByClassName("active");
                             act[0].childNodes[0].className = "";
                             this.className = "active";
-                            getHouseLst(2 + j);
+                            getHouseLst(this.childNodes[0].innerHTML);
                         }
                         fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
