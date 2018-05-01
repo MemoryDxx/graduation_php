@@ -9,7 +9,7 @@
         die('Could not connect: ' . mysqli_connect_error());
     }
 
-    $res1 = $conn->query("SELECT * FROM house WHERE uname='$name'");
+    $res1 = $conn->query("SELECT * FROM house");
     $result = array();
 
     while ($row1 = mysqli_fetch_assoc($res1)) {
