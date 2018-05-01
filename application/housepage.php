@@ -12,15 +12,15 @@
     $start = $_POST['start'];
     $page = $start;
     $inde = ($page-1)*5;
-    $smallest = $biggest-5;
-    $res1 = $conn->query("SELECT * FROM house LIMIT '$inde',5");
+    if($inde == 1){
+        $res1 = $conn->query("SELECT * FROM house LIMIT 0,5");
+    }
     $result = array();
     while ($row1 = mysqli_fetch_assoc($res1)) {
         # code...
         $result[] = $row1;
     }
-    var_dump($inde);
-    var_dump($start);
+
     echo json_encode();
     // echo $row['upic'];
 
