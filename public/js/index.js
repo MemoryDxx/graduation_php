@@ -348,7 +348,7 @@ function getlst() {
                     for(var j = 0; j < page; j++){
                         var pageli = document.createElement("li");
                         var pagelia = document.createElement("a");
-                        a.innerHTML = 2 + j;
+                        pagelia.innerHTML = 2 + j;
                         pageli.appendChild(pagelia);
                         fenyeul.insertBefore(pageli, fenyeul.lastChild);
                     }
