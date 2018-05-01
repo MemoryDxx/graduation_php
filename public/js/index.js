@@ -45,11 +45,11 @@ var CookieUtil = {
 
 // 检测cookie
 function checkCookie() {
-    if (CookieUtil.get("name") == null) {
-    
-    }else{
+    if (CookieUtil.get("name")) {
+        var btn = document.getElementById("lrbtn");
         var pcen = document.getElementById("pcenter");
         console.log(pcen);
+        btn.style.display = "none";
         pcen.style.display = "block";
     }
 }
