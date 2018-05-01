@@ -443,7 +443,8 @@ function getlst() {
                         pageli.appendChild(pagelia);
                         pageli.onclick = function () {
                             var act = document.getElementsByClassName("active");
-                            act[0].childNodes[0].className = "";
+                            act[0].className = "";
+                            console.log(act[0]);
                             this.className = "active";
                             getHouseLst(this.childNodes[0].innerHTML);
                         }
