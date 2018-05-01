@@ -14,7 +14,7 @@
     $smallest = $biggest-5;
     $res1 = $conn->query("SELECT * FROM house LIMIT '$inde',5");
     $result = array();
-
+    $row1["inde"] = $inde;
     while ($row1 = mysqli_fetch_assoc($res1)) {
         # code...
         $result[] = $row1;
