@@ -11,14 +11,9 @@
     
     
     $post_array = $_POST["user"];
-    var_dump($post_array);
     // 解析json
     $obj = json_decode($post_array);
-    
-    var_dump($obj);
-
     $uname = $obj->user_name;
-    var_dump($uname);
     $uemail = $obj->user_email;
     $uphone = $obj->user_phone;
     $upwd = $obj->user_pwd;
