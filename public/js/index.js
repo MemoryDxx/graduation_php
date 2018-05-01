@@ -46,7 +46,7 @@ var CookieUtil = {
 // 检测cookie
 function checkCookie() {
     if (CookieUtil.get("name") == null) {
-        alert("请登录");
+    
     }else{
         var pcen = document.getElementById("pcenter");
         console.log(pcen);
