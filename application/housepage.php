@@ -19,6 +19,8 @@
         # code...
         $result[] = $row1;
     }
+    var_dump($inde);
+    var_dump($start);
     echo json_encode();
     // echo $row['upic'];
 
