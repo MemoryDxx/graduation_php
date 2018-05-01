@@ -440,12 +440,12 @@ function getlst() {
                         var pageli = document.createElement("li");
                         var pagelia = document.createElement("a");
                         pagelia.innerHTML = 2 + j;
+                        pageli.className = "pageli";
                         pageli.appendChild(pagelia);
                         pageli.onclick = function () {
-                            var act = document.getElementsByClassName("active");
-                            act[0].className = "";
-                            console.log(act[0]);
-                            this.className = "active";
+                            var act = document.getElementsByClassName("pageli active");
+                            act[0].className = "pageli";
+                            this.className = "pageli active";
                             getHouseLst(this.childNodes[0].innerHTML);
                         }
                         fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
