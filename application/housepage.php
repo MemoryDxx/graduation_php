@@ -10,7 +10,7 @@
     }
 
     $start = $_POST['start'];
-    $res1 = $conn->query("SELECT * FROM house LIMIT '$start','$start'+5");
+    $res1 = $conn->query("SELECT * FROM house LIMIT '$start'*5-5,'$start'*5");
     $result = array();
 
     while ($row1 = mysqli_fetch_assoc($res1)) {

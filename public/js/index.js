@@ -443,9 +443,9 @@ function getlst() {
                         pageli.onclick = jmppage(2 + j);
                         fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
-                    getHouseLst(0);
+                    getHouseLst(1);
                 }else{
-                    getHouseLst(0);
+                    getHouseLst(1);
                 }
                 // 创建列表
                 // for(var i = 0; i < data.length && i < 5; i++){
