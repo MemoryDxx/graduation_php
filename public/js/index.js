@@ -350,7 +350,7 @@ function getlst() {
                         var pagelia = document.createElement("a");
                         pagelia.innerHTML = 2 + j;
                         pageli.appendChild(pagelia);
-                        fenyeul.insertBefore(pageli, fenyeul.lastChild);
+                        fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
                     }
                 }
                 for(var i = 0; i < data.length && i < 5; i++){
