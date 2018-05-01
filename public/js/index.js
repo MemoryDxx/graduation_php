@@ -1,3 +1,8 @@
+// 跳转
+function turn() {
+    window.location.href = "http://123.207.141.123/public/pages/pc.html";
+}
+
 // Cookie操作
 var CookieUtil = {
     get: function (name) {
