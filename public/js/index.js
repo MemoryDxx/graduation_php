@@ -375,8 +375,8 @@ function getlst() {
                     pri_span.className = "pri-num";
 
                     picp_img.src = data[i].house_pic;
-                    picp_a.href = "http://123.207.141.123/application/house.html?hid="+data[i].house_id;
-                    infop_a.href = "http://123.207.141.123/application/house.html?hid="+data[i].house_id;
+                    picp_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
+                    infop_a.href = "http://123.207.141.123/public/pages/house.html?hid="+data[i].house_id;
                     infop_a.innerHTML = data[i].house_name;
                     infop_span1.innerHTML = data[i].house_loc;
                     infop_span2.innerHTML = data[i].house_type;
