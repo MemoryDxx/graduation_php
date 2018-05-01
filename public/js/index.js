@@ -334,8 +334,77 @@ function rel() {
 
 // 获取首页房屋列表
 function getlst() {
-    var ul = document.getElementById("lst-ul");
-    
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                var data = JSON.parse(xhr.responseText);
+                console.log(xhr.responseText);
+                for(var i = 0;i < getJsonLen(data); i++){
+                    // 创建节点
+                    var ul = document.getElementById("lst-ul");
+                    var ls = document.createElement("li");
+                    var div_col = document.createElement("div");
+                    var div_picp = document.createElement("div");
+                    var div_infop = document.createElement("div");
+                    var picp_a = document.createElement("a");
+                    var picp_img = document.createElement("img");
+                    var infop_a = document.createElement("a");
+                    var infop_h = document.createElement("h2");
+                    var infop_div = document.createElement("div");
+                    var infop_span1 = document.createElement("span");
+                    var infop_span2 = document.createElement("span");
+                    var infop_span3 = document.createElement("span");
+                    var div_pri = document.createElement("div");
+                    var pri_span = document.createElement("span");
+                    // 设置节点
+                    ls.className = "list-group-item";
+                    div_col.className = "col-1";
+                    div_picp.className = "pic-panel";
+                    picp_a.className = "house-pic";
+                    picp_img.className = "house-img";
+                    div_infop = "info-panel";
+                    infop_div = "where";
+                    infop_span1 = "locat";
+                    infop_span2 = "huxing";
+                    infop_span3 = "chaoxiang";
+                    div_pri = "price";
+                    pri_span = "pri-num";
+
+                    picp_img.src = data[i].house_pic;
+                    picp_a.href = "http://123.207.141.123/application/house.html?hid="+data[i].house_id;
+                    infop_a.href = "http://123.207.141.123/application/house.html?hid="+data[i].house_id;
+                    infop_a.innerHTML = data[i].house_name;
+                    infop_span1.innerHTML = data[i].house_loc;
+                    infop_span2.innerHTML = data[i].house_type;
+                    infop_span3.innerHTML = data[i].house_ori;
+                    pri_span.innerHTML = data[i].house_pri;
+                    // 建立节点结构
+                    picp_a.appendChild(picp_img);
+                    div_picp.appendChild(picp_a);
+
+                    infop_h.appendChild(infop_a);
+                    infop_div.appendChild(infop_span1);
+                    infop_div.appendChild(infop_span2);
+                    infop_div.appendChild(infop_span3);
+                    div_infop.appendChild(infop_h);
+                    div_infop.appendChild(infop_div);
+
+                    div_pri.appendChild(pri_span);
+
+                    div_col.appendChild(div_picp);
+                    div_col.appendChild(div_infop);
+                    div_col.appendChild(div_pri);
+                }
+            }
+        }
+    };
+    xhr.open("post","http://123.207.141.123/application/houlst.php",true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send();
+
 }
 
 // 房子详情页面
@@ -433,7 +502,6 @@ function editHouse(data) {
     var hid = hli.lastChild.innerHTML;
     window.location.href = "http://123.207.141.123/public/pages/edit.html?hid=" + hid;
 }
-
 function edi() {
     var xqm = document.getElementById("relname").value; //小区名
     var hx = document.getElementById("reltype").value;  //户型
