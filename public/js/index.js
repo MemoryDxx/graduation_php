@@ -427,13 +427,6 @@ function getHouseLst(start) {
     xhr.send("start=" + start);
 }
 
-function cli() {
-    var act = document.getElementsByClassName("pageli active");
-    act[0].className = "pageli";
-    this.className = "pageli active";
-    getHouseLst(this.childNodes[0].innerHTML);
-}
-
 // 获取首页房屋列表
 function getlst() {
     var xhr = new XMLHttpRequest();
