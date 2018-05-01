@@ -520,7 +520,7 @@ function getlst() {
 // 列表分页跳转
 function jmppage(data) {
     var act = document.getElementsByClassName("active");
-    act[0].className = "";
+    act[0].childNodes[0].className = "";
     this.className = "active";
     getHouseLst(data);
 }
