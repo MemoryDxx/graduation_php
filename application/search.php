@@ -10,7 +10,7 @@
     }
 
     $msg = $_POST['msg'];
-    $res1 = $conn->query("SELECT * FROM house WHERE CONCAT('house_name','house_type','house_loc','house_floor','house_ori') LIKE '三沙源'");
+    $res1 = $conn->query("SELECT * FROM house WHERE CONCAT('house_name','house_type','house_loc','house_floor','house_ori') LIKE '%$msg%'");
     $result = array();
 
     while ($row1 = mysqli_fetch_assoc($res1)) {
