@@ -780,39 +780,32 @@ function search() {
         // readystate为4，请求已完成
         if (xhr.readyState ==4) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-                // 解析请求返回的JSON数据
-                // if(typeof(xhr.responseText) == text){
-                //     //return xhr.responseText;
-                //     console.log(xhr.responseText);
-                // }else{
-                    console.log(xhr.responseText);
-                    var data = JSON.parse(xhr.responseText);
-                    console.log(data);
-                    var fenyeul = document.getElementById("fenye");
-                    var page = Math.ceil(data.length/5);
-                    if(page > 1){
-                        for(var j = 0; j < page - 1; j++){
-                            var pageli = document.createElement("li");
-                            var pagelia = document.createElement("a");
-                            pagelia.innerHTML = 2 + j;
-                            pageli.className = "pageli";
-                            pageli.appendChild(pagelia);
-                            fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
+                //解析请求返回的JSON数据
+                console.log(xhr.responseText);
+                var data = JSON.parse(xhr.responseText);
+                console.log(data);
+                var fenyeul = document.getElementById("fenye");
+                var page = Math.ceil(data.length/5);
+                if(page > 1){
+                    for(var j = 0; j < page - 1; j++){
+                        var pageli = document.createElement("li");
+                        var pagelia = document.createElement("a");
+                        pagelia.innerHTML = 2 + j;
+                        pageli.className = "pageli";
+                        pageli.appendChild(pagelia);
+                        fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
+                    }
+                    var pli = document.getElementsByClassName("pageli");
+                    for(k in pli){
+                        pli[k].onclick = function () {
+                            var act = document.getElementsByClassName("pageli active");
+                            act[0].className = "pageli";
+                            this.className = "pageli active";
+                            getHouseLst(this.childNodes[0].innerHTML);
                         }
-                        var pli = document.getElementsByClassName("pageli");
-                        for(k in pli){
-                            pli[k].onclick = function () {
-                                var act = document.getElementsByClassName("pageli active");
-                                act[0].className = "pageli";
-                                this.className = "pageli active";
-                                getHouseLst(this.childNodes[0].innerHTML);
-                            }
-                        }
-                        getHouseLst(1);
-                    // }else{
-                    //     getHouseLst(1);
-                    // }
-                // }
+                    }
+                    getHouseLst(1);
+                }
             }
         }
     };
