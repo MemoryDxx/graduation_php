@@ -790,6 +790,7 @@ function search() {
                 }
                 var fenyeul = document.getElementById("fenye");
                 fenyeul.style.display = "none";
+                ele.className = "list-group";
                 createHouseLst(data,data.length);
             }
         }
