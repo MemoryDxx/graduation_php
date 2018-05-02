@@ -10,7 +10,9 @@
     }
 
     $name = $_POST['uname'];
-    $res = $conn->query("SELECT upic FROM user WHERE uname={$name}");
+    var_dump($name);
+    $sql = "SELECT upic FROM user WHERE uname=$name";
+    $res = $conn->query($sql);
 
     $row = mysqli_fetch_assoc($res);
     $res1 = $conn->query("SELECT * FROM house WHERE uname='$name'");
