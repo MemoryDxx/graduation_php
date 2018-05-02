@@ -781,10 +781,11 @@ function search() {
         if (xhr.readyState ==4) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
-                if(xhr.responseText.valueOf(text) == true){
-                    //return xhr.responseText;
+                // if(typeof(xhr.responseText) == text){
+                //     //return xhr.responseText;
+                //     console.log(xhr.responseText);
+                // }else{
                     console.log(xhr.responseText);
-                }else{
                     var data = JSON.parse(xhr.responseText);
                     console.log(data);
                     var fenyeul = document.getElementById("fenye");
@@ -808,10 +809,10 @@ function search() {
                             }
                         }
                         getHouseLst(1);
-                    }else{
-                        getHouseLst(1);
-                    }
-                }
+                    // }else{
+                    //     getHouseLst(1);
+                    // }
+                // }
             }
         }
     };
