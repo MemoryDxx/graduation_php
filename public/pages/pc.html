@@ -45,7 +45,7 @@
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/">主页</a></li>
-                            <li onclick="logout();"><a>注销</a></li>
+                            <li onclick="pclogout();"><a>注销</a></li>
                         </ul>
                     </div>
                 </div>
@@ -118,6 +118,10 @@
     <script type="text/javascript">
         //用window的onload事件，窗体加载完毕的时候
         window.onload = pc();
+        function pclogout() {
+            CookieUtil.set("name","");
+            window.location.href = "http://123.207.141.123/";
+        }
     </script>
 </body>
 </html>
