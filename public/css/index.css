@@ -197,9 +197,9 @@ nav{
 }
 
 .index_bd{
-    min-height: 100%;
-    /* height: auto!important;
-    height: 900px; */
+    height: auto!important;
+    height: 900px;
+    min-height: 900px;
     width: 100%;
 }
 

@@ -788,6 +788,8 @@ function search() {
                 while(ele.hasChildNodes()){
                     ele.removeChild(ele.firstChild);
                 }
+                var fenyeul = document.getElementById("fenye");
+                fenyeul.style.display = "none";
                 createHouseLst(data,data.length);
             }
         }
