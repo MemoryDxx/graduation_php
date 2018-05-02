@@ -10,8 +10,7 @@
     }
 
     $msg = $_POST['msg'];
-    var_dump($msg);
-    $sql = "SELECT * FROM house WHERE CONCAT('house_name','house_type','house_loc','house_floor','house_ori') LIKE '".$msg."'";
+    $sql = "SELECT * FROM house WHERE CONCAT('house_name','house_type','house_loc','house_floor','house_ori') LIKE $msg";
     $res1 = $conn->query($sql);
     $result = array();
 
