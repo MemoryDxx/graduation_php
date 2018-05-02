@@ -480,7 +480,7 @@ function jmppage(ele,data) {
     var act = document.getElementsByClassName("active");
     act[0].childNodes[0].className = "";
     this.className = "active";
-    getHouseLst(data);
+    getHouseLst(data,"http://123.207.141.123/application/housepage.php");
 }
 
 // 房子详情页面
