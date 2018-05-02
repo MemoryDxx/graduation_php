@@ -56,6 +56,7 @@ function checkCookie() {
         console.log(pcen);
         btn.style.display = "none";
         pcen.style.display = "block";
+        CookieUtil.set("name",CookieUtil.get("name"));
     }
 }
 
