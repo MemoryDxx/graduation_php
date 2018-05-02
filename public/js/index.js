@@ -299,6 +299,53 @@ function reg() {
     xhr.send("reguser=" + data);
 }
 
+// 搜索
+function search() {
+    var msg = document.getElementById("search_input").value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // readystate为4，请求已完成
+        if (xhr.readyState ==4) {
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                // 解析请求返回的JSON数据
+                if(datatype == "text"){
+                    return xhr.responseText;
+                }else{
+                    var data = JSON.parse(xhr.responseText);
+                    var fenyeul = document.getElementById("fenye");
+                    var page = Math.ceil(data.length/5);
+                    if(page > 1){
+                        for(var j = 0; j < page - 1; j++){
+                            var pageli = document.createElement("li");
+                            var pagelia = document.createElement("a");
+                            pagelia.innerHTML = 2 + j;
+                            pageli.className = "pageli";
+                            pageli.appendChild(pagelia);
+                            fenyeul.insertBefore(pageli, fenyeul.childNodes[5 + j]);
+                        }
+                        var pli = document.getElementsByClassName("pageli");
+                        for(k in pli){
+                            pli[k].onclick = function () {
+                                var act = document.getElementsByClassName("pageli active");
+                                act[0].className = "pageli";
+                                this.className = "pageli active";
+                                getHouseLst(this.childNodes[0].innerHTML);
+                            }
+                        }
+                        getHouseLst(1);
+                    }else{
+                        getHouseLst(1);
+                    }
+                }
+            }
+        }
+    };
+    xhr.open("post","http://123.207.141.123/application/search.php",true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("msg=" + msg);
+}
+
 // 发布房源
 function rel() {
     var xqm = document.getElementById("relname").value; //小区名
