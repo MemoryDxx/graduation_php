@@ -309,8 +309,8 @@ function search() {
         if (xhr.readyState ==4) {
             if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
                 // 解析请求返回的JSON数据
-                if(datatype == "text"){
-                    return xhr.responseText;
+                if(xhr.responseText == "text"){
+                    //return xhr.responseText;
                 }else{
                     var data = JSON.parse(xhr.responseText);
                     var fenyeul = document.getElementById("fenye");
