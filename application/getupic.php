@@ -12,6 +12,7 @@
     $name = $_POST['uname'];
     var_dump($name);
     $sql = "SELECT upic FROM user WHERE uname=$name";
+    var_dump($sql);
     $res = $conn->query($sql);
 
     $row = mysqli_fetch_assoc($res);
