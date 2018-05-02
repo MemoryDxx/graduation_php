@@ -410,7 +410,7 @@ function createHouseLst(data,dataLength) {
 }
 
 // 获取范围内房屋列表
-function getHouseLst(start) {
+function getHouseLst(start,url) {
     var ele = document.getElementById("lst-ul");
     while(ele.hasChildNodes()){
         ele.removeChild(ele.firstChild);
@@ -427,7 +427,7 @@ function getHouseLst(start) {
             }
         }
     };
-    xhr.open("post","http://123.207.141.123/application/housepage.php",true);
+    xhr.open("post",url,true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send("start=" + start);
 }
@@ -463,9 +463,9 @@ function getlst() {
                             getHouseLst(this.childNodes[0].innerHTML);
                         }
                     }
-                    getHouseLst(1);
+                    getHouseLst(1,"http://123.207.141.123/application/housepage.php");
                 }else{
-                    getHouseLst(1);
+                    getHouseLst(1,"http://123.207.141.123/application/housepage.php");
                 }
             }
         }
@@ -786,6 +786,7 @@ function search() {
                 console.log(data);
                 var fenyeul = document.getElementById("fenye");
                 var page = Math.ceil(data.length/5);
+                console.log(page);
                 if(page > 1){
                     for(var j = 0; j < page - 1; j++){
                         var pageli = document.createElement("li");
@@ -806,6 +807,7 @@ function search() {
                     }
                     getHouseLst(1);
                 }
+                getHouseLst(1);
             }
         }
     };
