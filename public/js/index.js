@@ -56,7 +56,6 @@ function checkCookie() {
         console.log(pcen);
         btn.style.display = "none";
         pcen.style.display = "block";
-        CookieUtil.set("name",CookieUtil.get("name"),"/public/pages");
     }
 }
 
@@ -650,7 +649,7 @@ function pc() {
                 // 解析请求返回的JSON数据
                 var data = JSON.parse(xhr.responseText);
                 // 头像
-                console.log(data);
+                // console.log(data);
                 // console.log(data[2]);
                 // console.log(data[2].house_name);
                 // console.log(getJsonLen(data));
