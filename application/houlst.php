@@ -9,7 +9,7 @@
         die('Could not connect: ' . mysqli_connect_error());
     }
 
-    $res1 = $conn->query("SELECT * FROM house ORDER BY house_id desc");
+    $res1 = $conn->query("SELECT * FROM house ORDER BY house_id asc");
     $result = array();
 
     while ($row1 = mysqli_fetch_assoc($res1)) {
