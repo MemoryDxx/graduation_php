@@ -10,10 +10,7 @@
     }
 
     $name = $_POST['uname'];
-    var_dump($name);
-    $sql = "SELECT upic FROM user WHERE uname=$name";
-    var_dump($sql);
-    $res = $conn->query($sql);
+    $res = $conn->query("SELECT upic FROM user WHERE uname='$name'");
 
     $row = mysqli_fetch_assoc($res);
     $res1 = $conn->query("SELECT * FROM house WHERE uname='$name'");
@@ -26,6 +23,7 @@
     }
     echo json_encode($result);
     // echo $row['upic'];
+    
 
     $conn->close();
 ?>
