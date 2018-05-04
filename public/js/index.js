@@ -741,8 +741,9 @@ function changepc() {
         formdata.append("olduname",olduname);
         formdata.append("newuname",uername);
     }
-    formdata.append("oldupwd",oldpwd);
-    if(newpwd == cnewpwd){
+    
+    if(newpwd == cnewpwd && oldpwd !== null){
+        formdata.append("oldupwd",oldpwd);
         formdata.append("newupwd",newpwd);
     }else{
         alert("请确认密码");
