@@ -23,8 +23,8 @@
         $result[] = $row1;
     }
     // 逆序
-    arsort($result);
-    echo json_encode($result);
+    $res = array_reverse($result);
+    echo json_encode($res);
     // echo $row['upic'];
 
     $conn->close($inde);
