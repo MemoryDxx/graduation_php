@@ -772,13 +772,13 @@ function changepc() {
 
 // 注销
 function logout() {
+    window.location.href = "http://123.207.141.123/";
     CookieUtil.set("name","","/");
     var btn = document.getElementById("lrbtn");
     var pcen = document.getElementById("pcenter");
     console.log(pcen);
     btn.style.display = "block";
     pcen.style.display = "none";
-    window.location.href = "http://123.207.141.123/";
 }
 
 // 搜索
