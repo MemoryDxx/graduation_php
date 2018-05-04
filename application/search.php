@@ -18,7 +18,7 @@
         # code...
         $result[] = $row1;
     }
-    echo json_encode($result);
+    echo json_encode(array_reverse($result));
     // echo $row['upic'];
 
     $conn->close();
