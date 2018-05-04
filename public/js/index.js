@@ -772,7 +772,7 @@ function changepc() {
 
 // 注销
 function logout() {
-    CookieUtil.set("name","");
+    CookieUtil.set("name","","/");
     var btn = document.getElementById("lrbtn");
     var pcen = document.getElementById("pcenter");
     console.log(pcen);
