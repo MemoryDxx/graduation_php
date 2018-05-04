@@ -29,6 +29,8 @@
         if ($row["upwd"] === $oldpwd) {
             # code...
             $conn->query("UPDATE user SET upwd='$newpwd' WHERE uname='$olduname'");
+        }else{
+            echo "wrong password";
         }
     }
     
