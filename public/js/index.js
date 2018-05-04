@@ -68,6 +68,8 @@ function phoneCheck(params) {
         document.getElementById("inputPhone3").value = "";
         return false;  
     }else{
+        var wrong = document.getElementById("wrong-msg2");
+        wrong.style.display = "none";
         return true;
     }
 }
@@ -81,6 +83,8 @@ function emailCheck(params) {
         document.getElementById("inputEmail3").value = "";
         return false;
     }else{
+        var wrong = document.getElementById("wrong-msg3");
+        wrong.style.display = "none";
         return true;
     }
 }
@@ -94,6 +98,8 @@ function unameCheck(params) {
         document.getElementById("inputUsername3").value = "";
         return false;
     }else{
+        var wrong = document.getElementById("wrong-msg1");
+        wrong.style.display = "none";
         return true;
     }
 }
