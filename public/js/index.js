@@ -773,7 +773,7 @@ function changepc() {
 // 注销
 function logout() {
     window.location.href = "http://123.207.141.123/";
-    CookieUtil.unset("name");
+    CookieUtil.unset("name","/","123.207.141.123");
     var btn = document.getElementById("lrbtn");
     var pcen = document.getElementById("pcenter");
     console.log(pcen);
