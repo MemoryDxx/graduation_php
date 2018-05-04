@@ -29,7 +29,7 @@
     }
     // 逆序
     $res = array_reverse($result);
-    echo json_encode($res);
+    echo json_encode(array_slice($res,0,5));
     // echo $row['upic'];
 
     $conn->close($inde);
