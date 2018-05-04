@@ -93,7 +93,7 @@
                             <div class="form-group">
                                 <label for="inputUsername" class="col-sm-3 control-label popup-label">用户名</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputUsername3" placeholder="Username">
+                                    <input type="text" class="form-control" id="inputUsername3" placeholder="Username" onblur="unameCheck(this.value);">
                                 </div>
                             </div>
                             <small id="wrong-msg1">数字、字母、-及下划线组成</small>
@@ -101,7 +101,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label popup-label">手机</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputPhone3" placeholder="phone">
+                                    <input type="text" class="form-control" id="inputPhone3" placeholder="phone" onblur="phoneCheck(this.value);">
                                 </div>
                             </div>
                             <small id="wrong-msg2">请输入正确手机号</small>
@@ -109,7 +109,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label popup-label">邮箱</label>
                                 <div class="col-sm-9">
-                                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email" onblur="emailCheck(this.value);">
                                 </div>
                             </div>
                             <small id="wrong-msg3">请输入正确的邮箱地址</small>
