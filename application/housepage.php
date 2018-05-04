@@ -12,7 +12,7 @@
     $start = $_POST['start'];
     $page = $start;
     $inde = ($page-1)*5;
-    $res1 = $conn->query("SELECT * FROM WHERE(SELECT * FROM house) LIMIT {$inde},5");
+    $res1 = $conn->query("SELECT * FROM house LIMIT {$inde},5");
     // $res1 = $conn->query("SELECT * FROM house LIMIT {$inde},5");  顺序取数据
     // if($inde == 0){
     //     $res1 = $conn->query("SELECT * FROM house LIMIT {$inde},5");
