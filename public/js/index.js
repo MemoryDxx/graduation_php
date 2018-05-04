@@ -288,6 +288,9 @@ function reg() {
                     bt.style.display = "none";
                     closepop();
                     CookieUtil.set("name",user.user_name);
+                }else if(xhr.responseText === "wrong") {
+                    alert("密码错误");
+                    document.getElementById("inputPassword4").value = "";
                 }
                 // var xhrres = JSON.parse(xhr.responseText);
                 

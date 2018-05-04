@@ -25,7 +25,7 @@
         # code...
         echo "success";
     }else{
-        echo "<script>alert('密码错误');<script>";
+        echo "wrong";
     }
     // $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
     // if($row['upwd'] === $upwd){

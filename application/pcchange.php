@@ -30,7 +30,7 @@
             # code...
             $conn->query("UPDATE user SET upwd='$newpwd' WHERE uname='$olduname'");
         }else{
-            echo "wrong password";
+            echo "<script>alert('密码错误');<script>";
         }
     }
     
