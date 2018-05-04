@@ -22,8 +22,9 @@
         # code...
         $result[] = $row1;
     }
-
-    echo json_encode(arsort($result));
+    // 逆序
+    arsort($result);
+    echo json_encode($result);
     // echo $row['upic'];
 
     $conn->close($inde);
