@@ -23,7 +23,7 @@
         $result[] = $row1;
     }
 
-    echo json_encode($result);
+    echo json_encode(arsort($result));
     // echo $row['upic'];
 
     $conn->close($inde);
